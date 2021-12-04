@@ -16,6 +16,8 @@ public class OmbiPluginConfiguration : BasePluginConfiguration
 
     public string? User { get; set; }
 
+    public bool RecentOnly { get; set; }
+
     public string Validate()
     {
         var errors = new StringBuilder();

@@ -1,5 +1,4 @@
 using MediaBrowser.Common.Net;
-using MediaBrowser.Controller.Entities.TV;
 using MediaBrowser.Controller.Library;
 using MediaBrowser.Controller.Plugins;
 using MediaBrowser.Model.Logging;
@@ -53,16 +52,22 @@ public sealed class OmbiItemSync : IServerEntryPoint
         {
             var client = new OmbiClient(http, jsonSerializer);
 
-            // BUG: do a full sync for TV episodes because Recently Added scan skips existing TV shows
-            if (args.Item is Episode)
+            // Wait a minute before notifying Ombi
+            // because the ItemAdded event is raised before Emby is done processing all the metadata
+            await Task.Delay(TimeSpan.FromMinutes(1));
+
+            // Hopefully Emby has completed scraping all metadata now
+            // otherwise items with incomplete metadata are added to Ombi, e.g. episodes without numbers
+            // and this totally breaks request processing until you do "Clear Data And Resync" in Ombi settings
+            if (configuration.RecentOnly)
             {
-                logger.Info("A TV show episode was added to the library, starting full library sync.");
-                await client.ScanLibrary(configuration).ConfigureAwait(false);
+                logger.Info($"An item was added to the library, start syncing recently added to Ombi.");
+                await client.ScanRecentlyAdded(configuration).ConfigureAwait(false);
             }
             else
             {
-                logger.Info("An item was added to the library, syncing recently added to Ombi.");
-                await client.ScanRecentlyAdded(configuration).ConfigureAwait(false);
+                logger.Info($"An item was added to the library, starting syncing full library to Ombi.");
+                await client.ScanLibrary(configuration).ConfigureAwait(false);
             }
         }
     }

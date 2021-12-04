@@ -70,6 +70,18 @@
                         </li>
 
                         <li>
+                            <label for="ombiRecentOnly">Use fast sync</label>
+                            <input type="checkbox" id="ombiRecentOnly" name="ombiRecentOnly">
+                            <div class="fieldDescription">
+                                When enabled, only recently added items are synced to Ombi. This speeds up request
+                                processing, but it requires that you
+                                configure Emby Server: settings >
+                                Library > Advanced > "Date added behavior for new content" > "Use date scanned into the
+                                library"
+                            </div>
+                        </li>
+
+                        <li>
                             <button type="submit" data-theme="b" data-mini="true">Save</button>
                             <button type="button" onclick="history.back();" data-mini="true">Cancel</button>
                         </li>
@@ -84,7 +96,7 @@
 
                 var pluginId = "b68a226e-5a88-4ff8-9a72-e443646ea121";
 
-                $('.ombiConfigurationPage').on('pageshow', function (event) {
+                $('.ombiConfigurationPage').off('pageshow').on('pageshow', function (event) {
 
                     Dashboard.showLoadingMsg();
 
@@ -92,23 +104,25 @@
                         $('#ombiHost').val(config.Host);
                         $('#ombiPort').val(config.Port);
                         $('#ombiBase').val(config.UrlBase);
-                        $('#ombiHttps').val(config.UseHttps);
+                        $('#ombiHttps').prop('checked', config.UseHttps);
                         $('#ombiKey').val(config.ApiKey);
                         $('#ombiUser').val(config.User);
+                        $('#ombiRecentOnly').prop('checked', config.RecentOnly);
 
                         Dashboard.hideLoadingMsg();
                     });
                 });
 
-                $('#ombiValidate').on('click', function (e) {
+                $('#ombiValidate').off('click').on('click', function (e) {
                     var configuration = {
                         Host: $('#ombiHost').val(),
                         Port: $('#ombiPort').val(),
                         UrlBase: $('#ombiBase').val(),
-                        UseHttps: $('#ombiHttps').val(),
+                        UseHttps: $('#ombiHttps').prop('checked'),
                         ApiKey: $('#ombiKey').val(),
-                        User: $('#ombiUser').val()
-                    }
+                        User: $('#ombiUser').val(),
+                        RecentOnly: $('#ombiRecentOnly').prop('checked')
+                    };
 
                     var params = new URLSearchParams(configuration).toString();
 
@@ -140,9 +154,10 @@
                         config.Host = $('#ombiHost').val();
                         config.Port = $('#ombiPort').val();
                         config.UrlBase = $('#ombiBase').val();
-                        config.UseHttps = $('#ombiHttps').val();
+                        config.UseHttps = $('#ombiHttps').prop('checked');
                         config.ApiKey = $('#ombiKey').val();
                         config.User = $('#ombiUser').val();
+                        config.RecentOnly = $('#ombiRecentOnly').prop('checked');
 
                         ApiClient.updatePluginConfiguration(pluginId, config).then(Dashboard.processPluginConfigurationUpdateResult);
                     });
