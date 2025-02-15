@@ -45,8 +45,8 @@ public class OmbiPluginConfiguration : BasePluginConfiguration
 
     public string GetUrl(string relativePath)
     {
-        var urlBase = (UrlBase?.TrimEnd(new[] { '/' }) ?? "") + "/";
-        relativePath = relativePath?.TrimStart(new[] { '/' }) ?? "";
+        var urlBase = (UrlBase?.TrimEnd(['/']) ?? "") + "/";
+		relativePath = relativePath?.TrimStart(['/']) ?? "";
         return new UriBuilder
         {
             Scheme = UseHttps ? "https" : "http",

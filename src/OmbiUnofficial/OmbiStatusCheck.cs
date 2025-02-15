@@ -26,26 +26,19 @@ public class OmbiVersionQuery : IReturn<OmbiVersion>
     public string? User { get; set; }
 }
 
-public sealed class OmbiStatusCheck : IService
+public sealed class OmbiStatusCheck(
+	ILogManager logManager,
+	IHttpClient http,
+	IJsonSerializer jsonSerializer
+) : IService
 {
-    private readonly ILogger logger;
+    private readonly ILogger logger = logManager.GetLogger(OmbiPlugin.Instance.Name);
 
-    private readonly IHttpClient http;
+    private readonly IHttpClient http = http ?? throw new ArgumentNullException(nameof(http));
 
-    private readonly IJsonSerializer jsonSerializer;
+    private readonly IJsonSerializer jsonSerializer = jsonSerializer ?? throw new ArgumentNullException(nameof(jsonSerializer));
 
-    public OmbiStatusCheck(
-        ILogManager logManager,
-        IHttpClient http,
-        IJsonSerializer jsonSerializer
-        )
-    {
-        this.logger = logManager.GetLogger(OmbiPlugin.Instance.Name);
-        this.http = http ?? throw new ArgumentNullException(nameof(http));
-        this.jsonSerializer = jsonSerializer ?? throw new ArgumentNullException(nameof(jsonSerializer));
-    }
-
-    public async Task<object> Get(OmbiVersionQuery request)
+	public async Task<object> Get(OmbiVersionQuery request)
     {
         var configuration = new Configuration.OmbiPluginConfiguration
         {
