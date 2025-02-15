@@ -31,9 +31,10 @@ public sealed class OmbiItemSync(
         var errors = configuration.Validate();
         if (errors.HasErrors)
         {
-            logger.Info("An item was added to the library, but could not sync recently added to Ombi.");
+			logger.Error("Ombi plugin configuration is invalid");
 			logger.LogMultiline(errors.GetErrorMessage(), LogSeverity.Warn, new System.Text.StringBuilder());
-        }
+			OmbiPlugin.Instance.NotifyAdmins("Ombi plugin configuration is invalid", errors.GetErrorMessage());
+		}
         else
         {
             var client = new OmbiClient(http, jsonSerializer);
@@ -42,19 +43,27 @@ public sealed class OmbiItemSync(
             // because the ItemAdded event is raised before Emby is done processing all the metadata
             await Task.Delay(TimeSpan.FromMinutes(1));
 
-            // Hopefully Emby has completed scraping all metadata now
-            // otherwise items with incomplete metadata are added to Ombi, e.g. episodes without numbers
-            // and this totally breaks request processing until you do "Clear Data And Resync" in Ombi settings
-            if (configuration.RecentOnly)
-            {
-                logger.Info($"An item was added to the library, start syncing recently added to Ombi.");
-                await client.ScanRecentlyAdded(configuration).ConfigureAwait(false);
-            }
-            else
-            {
-                logger.Info($"An item was added to the library, starting syncing full library to Ombi.");
-                await client.ScanLibrary(configuration).ConfigureAwait(false);
-            }
+			// Hopefully Emby has completed scraping all metadata now
+			// otherwise items with incomplete metadata are added to Ombi, e.g. episodes without numbers
+			// and this totally breaks request processing until you do "Clear Data And Resync" in Ombi settings
+			try
+			{
+				if (configuration.RecentOnly)
+				{
+					logger.Info($"An item was added to the library, start syncing recently added to Ombi.");
+					await client.ScanRecentlyAdded(configuration).ConfigureAwait(false);
+				}
+				else
+				{
+					logger.Info($"An item was added to the library, starting syncing full library to Ombi.");
+					await client.ScanLibrary(configuration).ConfigureAwait(false);
+				}
+			}
+			catch (Exception reason)
+			{
+                logger.ErrorException("Failed to sync a recently added item to Ombi", reason);
+				OmbiPlugin.Instance.NotifyAdmins("Ombi plugin failed to sync a recently added item", reason.Message);
+			}
         }
     }
 }

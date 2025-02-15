@@ -109,7 +109,7 @@ public class OmbiPlugin : BasePluginSimpleUI<OmbiPluginOptions>
 		return true;
 	}
 
-	private void NotifyAdmins(string title, string description)
+	public void NotifyAdmins(string title, string description)
 	{
 		var admins = users.GetUsers(new UserQuery
 		{
