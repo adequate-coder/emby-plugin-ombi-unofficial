@@ -1,0 +1,27 @@
+<div is="emby-scroller" data-horizontal="true" data-focusscroll="true" data-navcommands="card" class="flex flex-grow">
+
+    <div class="scrollSlider padded-top-page padded-left padded-right scrollSliderX flex">
+
+        <div class="horizontalSection">
+            <div class="sectionTitle">&nbsp;</div>
+            <div class="spotlightItemsContainer itemsContainer" is="emby-itemscontainer">
+            </div>
+            <div class="horizontalItemsContainer categoryItemsContainer itemsContainer" is="emby-itemscontainer">
+            </div>
+        </div>
+
+        <div class="horizontalSection resumeSection hide">
+            <div class="sectionTitle">${HeaderContinueWatching}</div>
+            <div is="emby-itemscontainer" class="itemsContainer" data-monitor="videoplayback,markplayed">
+
+            </div>
+        </div>
+
+        <div class="horizontalSection latestSection hide">
+            <div class="sectionTitle">${HeaderLatestEpisodes}</div>
+            <div is="emby-itemscontainer" class="itemsContainer" data-monitor="videoplayback,markplayed">
+
+            </div>
+        </div>
+    </div>
+</div>

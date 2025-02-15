@@ -1,0 +1,102 @@
+﻿<div is="emby-scroller" data-horizontal="false" data-focusscroll="true" data-navcommands="card" data-forcescrollbar="true" class="scrollFrameY flex flex-grow" data-bindheader="true">
+    <div class="scrollSlider flex-grow padded-top-page padded-left padded-right">
+
+        <div class="encodingNotInitializedMessage hide padded-top readOnlyContent auto-center">
+            ${TranscodingStillInitializing}
+        </div>
+        <form class="encodingSettingsForm padded-top auto-center hide padded-bottom-page">
+
+            <div class="verticalSection">
+
+                <div class="selectContainer">
+                    <select is="emby-select" class="selectHwa" label="${LabelEnableHardwareAcceleration}">
+                        <option value="1">${Yes}</option>
+                        <option value="0">${No}</option>
+                        <option value="2">${Advanced}</option>
+                    </select>
+                    <div class="fieldDescription hwaGuideLink"></div>
+                    <div is="emby-premierecontainer" class="fieldDescription hwaPremiereInfo hide"></div>
+                </div>
+            </div>
+
+            <div class="verticalSection hide hwaAdvanced" style="margin-bottom: 1em;">
+                <div class="sectionTitleContainer" style="margin-bottom: 1.5em;">
+                    <h2 class="sectionTitle">${HeaderPreferredHardwareDecoders}</h2>
+                </div>
+
+                <div class="hardwareDecoders">
+                </div>
+            </div>
+
+            <div class="verticalSection hide hwaAdvanced" style="margin-bottom: 1em;">
+                <div class="sectionTitleContainer" style="margin-bottom: 1.5em;">
+                    <h2 class="sectionTitle">${HeaderPreferredHardwareEncoders}</h2>
+                </div>
+
+                <div class="hardwareEncoders">
+                </div>
+            </div>
+
+            <div class="verticalSection" style="margin-bottom: 1.5em;">
+                <div class="sectionTitleContainer">
+                    <h2 class="sectionTitle">${HeaderSoftwareEncoders}</h2>
+                </div>
+
+                <div is="emby-itemscontainer" class="softwareEncoders itemsContainer vertical-list">
+                </div>
+            </div>
+
+            <div class="verticalSection">
+
+                <div class="inputContainer">
+                    <div class="flex align-items-center">
+                        <div class="flex-grow">
+                            <input is="emby-input" class="txtTranscodingTempPath" label="${LabelTranscodingTempPath}" autocomplete="off" />
+                        </div>
+                        <button type="button" is="paper-icon-button-light" class="btnSelectTranscodingTempPath emby-input-iconbutton"><i class="md-icon">search</i></button>
+                    </div>
+                    <div class="fieldDescription">${LabelTranscodingTempPathHelp}</div>
+                </div>
+
+                <div class="checkboxContainer checkboxContainer-withDescription">
+                    <label>
+                        <input is="emby-checkbox" type="checkbox" class="chkEnableThrottle" />
+                        <span>${EnableTranscodingThrottle}</span>
+                    </label>
+                    <div class="fieldDescription checkboxFieldDescription">${EnableTranscodingThrottleHelp}</div>
+                </div>
+
+                <div class="inputContainer">
+                    <input is="emby-input" type="number" class="txtDownMixAudioBoost" inputmode="decimal" required="required" min=".5" max="3" step=".1" label="${LabelDownMixAudioScale}" />
+                    <div class="fieldDescription">${LabelDownMixAudioScaleHelp}</div>
+                </div>
+
+                <div class="selectContainer fldToneMapping hide">
+                    <select is="emby-select" class="selectToneMapping" label="${LabelEnableHDRToneMapping}">
+                        <option value="">${No}</option>
+                        <option value="hw">${WithHardwareAcceleratedTranscoding}</option>
+                        <option value="swforced">${WithSoftwareTranscoding}</option>
+                        <option value="both">${WithEitherHardwareOrSoftwareTranscoding}</option>
+                    </select>
+                    <div class="fieldDescription toneMappingDescription hide"></div>
+                    <div class="fieldDescription">${EnableHDRToneMappingHelp}</div>
+                    <div class="fieldDescription hwaPremiereInfo hide"></div>
+                </div>
+
+                <div class="checkboxContainer checkboxContainer-withDescription">
+                    <label>
+                        <input is="emby-checkbox" type="checkbox" class="chkEnableSubtitleExtraction" />
+                        <span>${AllowOnTheFlySubtitleExtraction}</span>
+                    </label>
+                    <div class="fieldDescription checkboxFieldDescription">${AllowOnTheFlySubtitleExtractionHelp}</div>
+                </div>
+
+            </div>
+
+
+            <div>
+                <button is="emby-button" type="submit" class="raised button-submit block"><span>${Save}</span></button>
+            </div>
+        </form>
+    </div>
+</div>

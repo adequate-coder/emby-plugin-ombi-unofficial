@@ -1,0 +1,40 @@
+<div is="emby-scroller" class="view flex flex-direction-column scrollFrameY flex-grow" data-mousewheel="true" data-horizontal="false" data-forcescrollbar="true" data-focusscroll="true" data-bindheader="true">
+    <div class="scrollSlider flex-grow flex-direction-column padded-left padded-right padded-top-page padded-bottom-page">
+        <form style="margin:0 auto;">
+
+            <h1 style="margin-top:0;" class="viewTitle"></h1>
+
+            <div class="inputContainer">
+                <input is="emby-input" class="txtUserName" type="text" autocomplete="off" label="${LabelUsername}" required />
+            </div>
+            <div class="inputContainer">
+                <input is="emby-input" class="txtPassword" type="password" autocomplete="off" label="${LabelPassword}" />
+            </div>
+            <div class="checkboxList">
+                <label class="checkboxContainer">
+                    <input is="emby-checkbox" type="checkbox" class="chkRememberLogin" checked />
+                    <span>${RememberMe}</span>
+                </label>
+            </div>
+            <button is="emby-button" type="submit" class="raised block paperSubmit" style="margin-top:2em;">
+                <span>${HeaderSignIn}</span>
+            </button>
+            <button is="emby-button" type="button" class="raised block buttonCancel">
+                <span>${Cancel}</span>
+            </button>
+            <p class="buttonItems justify-content-center">
+
+                <button is="emby-button" type="button" class="button-link cancel btnForgotPassword secondaryText buttonItems-item">
+                    <span>${HeaderForgotPassword}</span>
+                </button>
+
+                <button is="emby-button" type="button" class="button-link hide btnSelectServer secondaryText buttonItems-item">
+                    <span>${HeaderChangeServer}</span>
+                </button>
+            </p>
+
+            <p class="disclaimer" style="text-align: center; margin-top: 2em;"></p>
+
+        </form>
+    </div>
+</div>

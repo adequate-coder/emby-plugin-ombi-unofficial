@@ -1,0 +1,72 @@
+﻿<div class="formDialogHeader">
+    <button type="button" is="emby-dialogclosebutton"></button>
+    <h3 class="formDialogHeaderTitle">
+        ${Identify}
+    </h3>
+</div>
+
+<div class="formDialogContent flex flex-direction-column" style="overflow:hidden;">
+    <div is="emby-scroller" data-horizontal="false" data-forcescrollbar="true" data-focusscroll="true" class="flex-grow">
+
+        <div class="scrollSlider padded-left padded-right padded-bottom-page">
+            <form class="popupIdentifyForm" style="margin:auto;">
+
+                <p>${HeaderIdentifyItemHelp}</p>
+
+                <div class="padded-bottom itemPathContainer hide">
+                    <div>${LabelPath}</div>
+                    <div class="itemPath fieldDescription">
+                    </div>
+                </div>
+
+                <div class="inputContainer">
+                    <input is="emby-input" type="text" class="txtLookupName identifyField" data-lookup="Name" label="${LabelTitle}" />
+                </div>
+                <div class="fldLookupYear inputContainer">
+                    <input is="emby-input" type="number" class="txtLookupYear identifyField" data-lookup="Year" inputmode="numeric" min="1800" label="${Year}" />
+                </div>
+
+                <div class="identifyProviderIds">
+                </div>
+
+                <div class="formDialogFooter">
+                    <button is="emby-button" type="submit" class="raised button-submit block formDialogFooterItem">
+                        <span>${Search}</span>
+                    </button>
+                </div>
+            </form>
+            <div class="identificationSearchResults hide padded-top">
+
+                <h2 class="sectionTitle sectionTitle-cards">${SearchResults}</h2>
+                <div is="emby-itemscontainer" class="itemsContainer vertical-wrap identificationSearchResultList itemsContainer-defaultCardSize">
+
+                </div>
+                <p class="noResultsFound hide" style="text-align:center;">${NoItemsMatchingFound}</p>
+            </div>
+
+            <form class="identifyOptionsForm hide" style="margin:auto;">
+
+                <br />
+                <div>
+                    <div class="selectedSearchResult">
+
+                    </div>
+                    <div class="fieldDescription" style="font-size:92%;margin-bottom:1.5em;">
+                        ${ThisImageIsOnlyPreview}
+                    </div>
+                </div>
+
+                <label class="checkboxContainer">
+                    <input type="checkbox" is="emby-checkbox" class="chkIdentifyReplaceImages" />
+                    <span>${ReplaceExistingImages}</span>
+                </label>
+
+                <div class="formDialogFooter">
+                    <button is="emby-button" type="submit" class="raised button-submit block btnSubmit formDialogFooterItem">
+                        <span>${ButtonOk}</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

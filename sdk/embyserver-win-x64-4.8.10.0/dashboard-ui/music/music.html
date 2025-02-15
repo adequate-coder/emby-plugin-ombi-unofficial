@@ -1,0 +1,112 @@
+<div class="view flex flex-direction-column withTabs">
+
+    <div data-index="0" is="emby-scroller" data-horizontal="false" data-focusscroll="true" data-navcommands="card" data-forcescrollbar="true" class="scrollFrameY flex flex-grow tabContent tabContent-positioned" data-bindheader="true">
+
+        <div class="scrollSlider flex-grow padded-top-page">
+
+            <div class="continueListeningSection hide verticalSection verticalSection-cards autoScrollSection">
+                <div class="sectionTitleContainer sectionTitleContainer-cards padded-left padded-left-page padded-right">
+                    <h2 class="sectionTitle sectionTitle-cards">${HeaderContinueListening}</h2>
+                </div>
+                <div is="emby-scroller" data-mousewheel="false" data-focusscroll="true" class="padded-top-focusscale padded-bottom-focusscale padded-left padded-left-page padded-right">
+                    <div is="emby-itemscontainer" data-focusabletype="nearest" class="itemsContainer scrollSlider focusable focuscontainer-x" data-virtualscrolllayout="horizontal-grid"></div>
+                </div>
+            </div>
+
+            <div class="latestSection hide verticalSection verticalSection-cards verticalSection-extrabottompadding autoScrollSection">
+                <div class="sectionTitleContainer sectionTitleContainer-cards padded-left padded-left-page padded-right">
+                    <h2 class="sectionTitle sectionTitle-cards">${HeaderLatestMusic}</h2>
+                </div>
+                <div is="emby-scroller" data-mousewheel="false" data-focusscroll="true" class="padded-top-focusscale padded-bottom-focusscale padded-left padded-left-page padded-right">
+                    <div is="emby-itemscontainer" data-focusabletype="nearest" class="itemsContainer scrollSlider focusable focuscontainer-x" data-virtualscrolllayout="horizontal-grid"></div>
+                </div>
+            </div>
+
+            <div class="recentlyPlayedSection hide verticalSection verticalSection-cards verticalSection-extrabottompadding autoScrollSection">
+                <div class="sectionTitleContainer sectionTitleContainer-cards padded-left padded-left-page padded-right">
+                    <h2 class="sectionTitle sectionTitle-cards">${HeaderRecentlyPlayed}</h2>
+                </div>
+                <div is="emby-scroller" data-mousewheel="false" data-focusscroll="true" class="padded-top-focusscale padded-bottom-focusscale padded-left padded-left-page padded-right">
+                    <div is="emby-itemscontainer" data-focusabletype="nearest" class="itemsContainer scrollSlider focusable focuscontainer-x itemsContainer-sideFooters" data-monitor="audioplayback" data-virtualscrolllayout="horizontal-grid"></div>
+                </div>
+            </div>
+
+            <div class="frequentlyPlayedSection hide verticalSection verticalSection-cards verticalSection-extrabottompadding autoScrollSection">
+                <div class="sectionTitleContainer sectionTitleContainer-cards padded-left padded-left-page padded-right">
+                    <h2 class="sectionTitle sectionTitle-cards">${HeaderFrequentlyPlayed}</h2>
+                </div>
+                <div is="emby-scroller" data-mousewheel="false" data-focusscroll="true" class="padded-top-focusscale padded-bottom-focusscale padded-left padded-left-page padded-right">
+                    <div is="emby-itemscontainer" data-focusabletype="nearest" class="itemsContainer scrollSlider focusable focuscontainer-x itemsContainer-sideFooters" data-monitor="audioplayback" data-virtualscrolllayout="horizontal-grid"></div>
+                </div>
+            </div>
+
+            <div class="favoriteArtistsSection hide verticalSection verticalSection-cards autoScrollSection">
+                <div class="sectionTitleContainer sectionTitleContainer-cards padded-left padded-left-page padded-right focusable" data-focusabletype="nearest">
+                    <a href="#" data-href="list/list.html?type=MusicArtist&IsFavorite=true" is="emby-sectiontitle" class="noautofocus button-link button-link-color-inherit sectionTitleTextButton sectionTitleTextButton-link">
+                        <h2 class="sectionTitle sectionTitle-cards">${HeaderFavoriteArtists}</h2>
+                    </a>
+                </div>
+                <div is="emby-scroller" data-mousewheel="false" data-focusscroll="true" class="padded-top-focusscale padded-bottom-focusscale padded-left padded-left-page padded-right">
+                    <div is="emby-itemscontainer" data-focusabletype="nearest" data-cardsizeoffset="1" class="itemsContainer scrollSlider focusable focuscontainer-x" data-monitor="markfavorite" data-virtualscrolllayout="horizontal-grid"></div>
+                </div>
+            </div>
+
+            <div class="favoriteAlbumsSection hide verticalSection verticalSection-cards autoScrollSection">
+                <div class="sectionTitleContainer sectionTitleContainer-cards padded-left padded-left-page padded-right focusable" data-focusabletype="nearest">
+                    <a href="#" data-href="list/list.html?type=MusicAlbum&IsFavorite=true" is="emby-sectiontitle" class="noautofocus button-link button-link-color-inherit sectionTitleTextButton sectionTitleTextButton-link">
+                        <h2 class="sectionTitle sectionTitle-cards">${HeaderFavoriteAlbums}</h2>
+                    </a>
+                </div>
+                <div is="emby-scroller" data-mousewheel="false" data-focusscroll="true" class="padded-top-focusscale padded-bottom-focusscale padded-left padded-left-page padded-right">
+                    <div is="emby-itemscontainer" data-focusabletype="nearest" class="itemsContainer scrollSlider focusable focuscontainer-x" data-monitor="markfavorite" data-virtualscrolllayout="horizontal-grid"></div>
+                </div>
+            </div>
+
+            <div class="favoriteSongsSection hide verticalSection verticalSection-cards verticalSection-extrabottompadding autoScrollSection">
+                <div class="sectionTitleContainer sectionTitleContainer-cards padded-left padded-left-page padded-right focusable" data-focusabletype="nearest">
+                    <a href="#" data-href="list/list.html?type=Audio&IsFavorite=true" is="emby-sectiontitle" class="noautofocus button-link button-link-color-inherit sectionTitleTextButton sectionTitleTextButton-link">
+                        <h2 class="sectionTitle sectionTitle-cards">${HeaderFavoriteSongs}</h2>
+                    </a>
+                </div>
+                <div is="emby-scroller" data-mousewheel="false" data-focusscroll="true" class="padded-top-focusscale padded-bottom-focusscale padded-left padded-left-page padded-right">
+                    <div is="emby-itemscontainer" data-focusabletype="nearest" class="itemsContainer scrollSlider focusable focuscontainer-x itemsContainer-sideFooters" data-monitor="markfavorite" data-virtualscrolllayout="horizontal-grid"></div>
+                </div>
+            </div>
+            <div class="padded-bottom-page"></div>
+        </div>
+    </div>
+
+    <div class="tabContent tabContent-positioned flex flex-grow" data-index="1" data-swapnode="itemstab">
+
+    </div>
+    <div class="tabContent tabContent-positioned flex flex-grow" data-index="2" data-swapnode="itemstab">
+
+    </div>
+    <div class="tabContent tabContent-positioned flex flex-grow" data-index="3" data-swapnode="itemstab">
+
+    </div>
+
+    <div class="tabContent tabContent-positioned flex flex-grow" data-index="4" data-swapnode="itemstab">
+
+    </div>
+
+    <div class="tabContent tabContent-positioned flex flex-grow" data-index="5" data-swapnode="itemstab">
+
+    </div>
+
+    <div class="tabContent tabContent-positioned flex flex-grow" data-index="6" data-swapnode="itemstab">
+
+    </div>
+
+    <div class="tabContent tabContent-positioned flex flex-grow" data-index="7" data-swapnode="itemstab">
+
+    </div>
+
+    <div class="tabContent tabContent-positioned flex flex-grow" data-index="8" data-swapnode="itemstab">
+
+    </div>
+
+    <div class="tabContent tabContent-positioned flex flex-grow" data-index="9" data-swapnode="itemstab">
+
+    </div>
+</div>

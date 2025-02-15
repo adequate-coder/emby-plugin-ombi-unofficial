@@ -1,0 +1,15 @@
+{
+    "MediaType": "Mediatyyppi",
+    "ExternalPlayers": "Ulkoiset soittimet",
+    "ExternalPlayer": "Ulkoinen soitin",
+    "PlayerPath": "Soittimen polku",
+    "ArgumentsHelp": "Sijoita jokainen argumentti omalle rivilleen.",
+    "TokenPath": "{path} = mediatiedoston polku",
+    "EnableFor": "K\u00e4yt\u00e4 seuraaville",
+    "VideoFiles": "Videotiedostot",
+    "InternetStreams": "Internetmediavirrat",
+    "CommandLineArguments": "Komentoriviargumentit",
+    "TokenStartPosMs": "{ms} = aloituskohta ms",
+    "TokenStartPosSeconds": "{Seconds} = aloituskohta sekunteina",
+    "AdditionalFilters": "Lis\u00e4suodattimet"
+}

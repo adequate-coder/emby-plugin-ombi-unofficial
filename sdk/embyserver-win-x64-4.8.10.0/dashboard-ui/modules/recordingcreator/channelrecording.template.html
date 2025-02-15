@@ -1,0 +1,70 @@
+﻿<div class="formDialogHeader">
+    <button type="button" is="emby-dialogclosebutton"></button>
+    <h3 class="formDialogHeaderTitle">
+        ${HeaderCreateRecording}
+    </h3>
+</div>
+
+<div is="emby-scroller" data-horizontal="false" data-focusscroll="true" class="formDialogContent">
+    <div class="scrollSlider">
+        <form class="dialogContentInner dialog-content-centered padded-left padded-right padded-top">
+
+            <div class="inputContainer">
+                <input is="emby-input" class="txtName" type="text" label="${LabelName}" required />
+            </div>
+
+            <div class="selectContainer fldChannel hide">
+                <select is="emby-select" class="selectChannel" label="${Channels}" multiple>
+                </select>
+            </div>
+
+            <div class="selectContainer fldKeywordType hide">
+                <select is="emby-select" class="selectKeywordType" label="${LabelKeywordType}">
+                    <option value="Name">${Title}</option>
+                    <option value="EpisodeTitle">${EpisodeTitle}</option>
+                    <option value="Overview">${Overview}</option>
+                </select>
+            </div>
+
+            <div class="inputContainer fldKeyword hide">
+                <input is="emby-input" class="txtKeyword" type="text" label="${Keyword}" />
+            </div>
+
+            <div class="inputContainer fldStartTime hide">
+                <input is="emby-input" class="txtStartTime" type="datetime-local" label="${LabelStartTime}" step="60" />
+            </div>
+
+            <div class="inputContainer fldEndTime hide">
+                <input is="emby-input" class="txtEndTime" type="datetime-local" label="${LabelEndTime}" step="60" />
+            </div>
+
+            <div class="selectContainer fldFrequency">
+                <select is="emby-select" class="selectFrequency" label="${LabelFrequency}">
+                    <option value="once">${Once}</option>
+                    <option value="recurring">${Recurring}</option>
+                </select>
+            </div>
+
+            <div class="selectContainer fldAirDays hide">
+                <select is="emby-select" class="selectAirDays" label="${LabelAirDays}" multiple data-virtualscroll="false">
+                </select>
+            </div>
+
+            <div class="previewContainer hide">
+                <div class="flex align-items-baseline" style="margin: 1.5em 0 .75em;">
+                    <h2 style="margin: 0;">${Preview}</h2>
+                    <div class="secondaryText previewCountText" style="margin:0 1em;"></div>
+                </div>
+                <div is="emby-itemscontainer" class="itemsContainer previewitemsContainer vertical-list">
+
+                </div>
+            </div>
+
+            <div class="formDialogFooter">
+                <button is="emby-button" type="submit" class="raised btnSubmit block formDialogFooterItem button-submit">
+                    <span>${HeaderCreateRecording}</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

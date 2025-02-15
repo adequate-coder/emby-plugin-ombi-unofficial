@@ -1,0 +1,1 @@
+define(["./dom.js"],function(_dom){HTMLElement.prototype.waitForCustomElementUpgrade=function(){return this.__upgraded?Promise.resolve():(elem=this,new Promise(function(resolve,reject){elem.__upgraded?resolve():_dom.default.addEventListener(elem,"upgraded",function(){elem.__upgraded=!0,resolve()},{once:!0})}));var elem}});

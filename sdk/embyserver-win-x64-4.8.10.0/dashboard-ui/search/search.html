@@ -1,0 +1,30 @@
+﻿<div is="emby-scroller" class="view flex flex-direction-column scrollFrameY flex-grow" data-mousewheel="true" data-horizontal="false" data-focusscroll="true" data-forcescrollbar="true" data-bindheader="true">
+    <div class="scrollSlider flex-grow flex-direction-column padded-top-page padded-bottom-page settingsContainer">
+        <div class="padded-left padded-right searchFields padded-bottom" style="margin-top:-.75em;">
+        </div>
+
+        <div class="searchResults padded-bottom-page">
+            <div class="hide verticalSection searchSuggestions" style="text-align:center;">
+                <div>
+                    <h2 class="sectionTitle padded-left padded-right justify-content-center">${Suggestions}</h2>
+                </div>
+                <div class="searchSuggestionsList padded-left padded-right">
+                </div>
+            </div>
+            <div class="hide verticalSection globalResults">
+                <h2 class="sectionTitle sectionTitle-cards focuscontainer-x padded-left padded-right">${HeaderTopResults}</h2>
+                <div is="emby-scroller" data-horizontal="true" data-focusscroll="true" data-mousewheel="false" class="padded-top-focusscale padded-bottom-focusscale padded-left padded-right">
+                    <div is="emby-itemscontainer" data-focusabletype="nearest" class="itemsContainer scrollSlider focuscontainer-x focusable"></div>
+                </div>
+            </div>
+
+            <div class="searchCategories">
+
+            </div>
+
+            <p class="hide noResults padded-left padded-right padded-top flex flex-wrap-wrap justify-content-center">
+                ${NoItemsMatchingFound}
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+{
+    "MediaType": "Lloji i medias",
+    "ExternalPlayers": "Riprodhues t\u00eb jasht\u00ebm",
+    "ExternalPlayer": "Riprodhues i jasht\u00ebm",
+    "PlayerPath": "Shtegu i riprodhuesit",
+    "ArgumentsHelp": "Vendos \u00e7do argument n\u00eb nj\u00eb rresht t\u00eb ve\u00e7ant\u00eb.",
+    "TokenPath": "{path} = shteg p\u00ebr file-in media",
+    "EnableFor": "Aktivizo P\u00ebr",
+    "VideoFiles": "File-t video",
+    "InternetStreams": "Rrymat e internetit",
+    "CommandLineArguments": "Argumentat e rreshtit t\u00eb komand\u00ebs",
+    "TokenStartPosMs": "{ms} = milisekondat e pozicionit t\u00eb fillimit",
+    "TokenStartPosSeconds": "{Seconds} = sekondat e pozicionit t\u00eb fillimit",
+    "AdditionalFilters": "Filtra Shtes\u00eb"
+}

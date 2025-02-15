@@ -1,0 +1,68 @@
+﻿<div class="formDialogHeader">
+    <button type="button" is="emby-dialogclosebutton" closetype="done"></button>
+    <h3 class="formDialogHeaderTitle">
+        ${HeaderImageOptions}
+    </h3>
+</div>
+
+<div class="formDialogContent scrollY">
+    <div class="dialogContentInner dialog-content-centered padded-left padded-right">
+        <form style="0 auto;">
+
+            <div class="verticalSection">
+                <h3 class="checkboxListLabel">${HeaderFetchImages}</h3>
+                <div class="imageSelections checkboxList">
+
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="imageType" data-imagetype="Primary" />
+                        <span>${Primary}</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="imageType" data-imagetype="Art" />
+                        <span>${Art}</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="imageType" data-imagetype="Banner" />
+                        <span>${Banner}</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="imageType" data-imagetype="Box" />
+                        <span>${Box}</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="imageType" data-imagetype="BoxRear" />
+                        <span>${BoxRear}</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="imageType" data-imagetype="Disc" />
+                        <span>${Disc}</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="imageType" data-imagetype="Logo" />
+                        <span>${Logo}</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="imageType" data-imagetype="Menu" />
+                        <span>${Menu}</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="imageType" data-imagetype="Thumb" />
+                        <span>${Thumb}</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="backdropFields">
+                <div class="inputContainer">
+                    <input is="emby-input" type="number" class="txtMaxBackdrops" required="required" min="0" label="${LabelMaxBackdropsPerItem}" inputmode="numeric" />
+                </div>
+                <div class="inputContainer">
+                    <input is="emby-input" type="number" class="txtMinBackdropDownloadWidth" required="required" min="0" label="${LabelMinBackdropDownloadWidth}" inputmode="numeric" />
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

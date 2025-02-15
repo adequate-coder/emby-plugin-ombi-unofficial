@@ -1,0 +1,1 @@
+define(["exports","./../common/dataformatter.js"],function(_exports,_dataformatter){Object.defineProperty(_exports,"__esModule",{value:!0}),_exports.default=void 0;_exports.default=_dataformatter.default.formatRelativeTime});

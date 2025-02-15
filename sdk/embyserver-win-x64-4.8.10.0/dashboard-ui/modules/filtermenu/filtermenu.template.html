@@ -1,0 +1,198 @@
+<div is="emby-scroller" data-horizontal="false" data-forcescrollbar="true" data-focusscroll="true" class="formDialogContent">
+    <div class="scrollSlider">
+        <form class="dialogContentInner dialog-content-centered padded-left padded-right focuscontainer navout-up">
+
+            <div class="selectContainer hide playstateFilters">
+                <select is="emby-select" class="selectPlaystate" label="${LabelPlaystate}"></select>
+            </div>
+
+            <div class="checkboxContainer simpleFilter viewSetting" data-settingname="IsFavorite">
+                <label>
+                    <input type="checkbox" is="emby-checkbox" />
+                    <span>${Favorite}</span>
+                </label>
+            </div>
+
+            <div class="selectContainer hide genreFilters">
+                <select is="emby-select" class="selectGenre" label="${Genre}" data-autoallany="false" data-settingname="GenreIds" multiple></select>
+            </div>
+
+            <div class="selectContainer hide officialRatingFilters">
+                <select is="emby-select" class="selectOfficialRating" data-settingname="OfficialRatings" data-delimiter="|" label="${LabelParentalRating}" data-autoallany="false" multiple></select>
+            </div>
+
+            <div class="selectContainer hide studioFilters">
+                <select is="emby-select" class="selectStudio" label="${Studio}" data-settingname="StudioIds" data-autoallany="false" multiple></select>
+            </div>
+
+            <div class="selectContainer hide tagFilters">
+                <select is="emby-select" class="selectTags" label="${Tag}" data-settingname="TagIds" data-autoallany="false" multiple></select>
+            </div>
+            <div class="selectContainer hide yearFilters">
+                <select is="emby-select" class="selectYears" data-settingname="Years" label="${Year}" data-autoallany="false" multiple></select>
+            </div>
+
+            <div class="selectContainer hide viewSetting" data-settingname="SeriesStatus">
+                <select is="emby-select" label="${LabelStatus}" class="selectSeriesStatus" data-settingname="SeriesStatus">
+                    <option value="">${Any}</option>
+                    <option value="Continuing">${Continuing}</option>
+                    <option value="Ended">${Ended}</option>
+                </select>
+            </div>
+
+            <div class="selectContainer hide simpleFilter viewSetting" data-settingname="ChannelMappingStatus">
+                <select is="emby-select" class="selectChannelMappingStatus" label="${LabelGuideDataChannel}">
+                    <option value="">${All}</option>
+                    <option value="AutoMapped">${AutoMapped}</option>
+                    <option value="ManuallyMapped">${ManuallyMapped}</option>
+                    <option value="Unmapped">${NotMappedToGuideData}</option>
+                </select>
+            </div>
+
+            <div class="verticalSection multiSettingsSection hide">
+
+                <h2 class="sectionTitle">${HeaderMediaInfo}</h2>
+
+                <div class="selectContainer hide containerFilters">
+                    <select is="emby-select" class="selectContainers" data-settingname="Containers" label="${Container}" data-autoallany="false" multiple></select>
+                </div>
+
+                <div class="selectContainer hide videoCodecFilters">
+                    <select is="emby-select" class="selectVideoCodecs" data-settingname="VideoCodecs" label="${LabelVideoCodec}" data-autoallany="false" multiple></select>
+                </div>
+
+                <div class="selectContainer hide fldExtendedVideoTypes">
+                    <select is="emby-select" class="selectExtendedVideoTypes" data-settingname="ExtendedVideoTypes" label="${VideoType}" data-autoallany="false" multiple></select>
+                </div>
+
+                <div class="selectContainer hide simpleFilter viewSetting" data-settingname="Resolution">
+                    <select is="emby-select" class="selectResolution" label="${Resolution}">
+                        <option value="">${Any}</option>
+                        <option value="4k">4K</option>
+                        <option value="1080p">1080p</option>
+                        <option value="720p">720p</option>
+                        <option value="SD">SD</option>
+                    </select>
+                </div>
+
+                <div class="checkboxContainer simpleFilter viewSetting hide" data-settingname="Is3D">
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" />
+                        <span>3D</span>
+                    </label>
+                </div>
+
+                <div class="selectContainer hide audioCodecFilters">
+                    <select is="emby-select" class="selectAudioCodecs" data-settingname="AudioCodecs" label="${LabelAudioCodec}" data-autoallany="false" multiple></select>
+                </div>
+
+                <div class="selectContainer hide audioLayoutFilters">
+                    <select is="emby-select" class="selectAudioLayouts" data-settingname="AudioLayouts" label="${LabelAudioLayout}" data-autoallany="false" multiple></select>
+                </div>
+
+                <div class="selectContainer hide audioLanguageFilters">
+                    <select is="emby-select" class="selectAudioLanguages" data-settingname="AudioLanguages" label="${LabelAudioLanguage}" data-autoallany="false" multiple></select>
+                </div>
+
+                <div class="selectContainer hide simpleFilter viewSetting" data-settingname="HasLyrics">
+                    <select is="emby-select" class="selectHasLyrics" label="${Lyrics}">
+                        <option value="">${Any}</option>
+                        <option value="true">${Yes}</option>
+                        <option value="false">${No}</option>
+                    </select>
+                </div>
+
+                <div class="selectContainer hide simpleFilter viewSetting" data-settingname="HasSubtitles">
+                    <select is="emby-select" class="selectHasSubtitles" label="${Subtitles}">
+                        <option value="">${Any}</option>
+                        <option value="true">${Yes}</option>
+                        <option value="false">${No}</option>
+                    </select>
+                </div>
+
+                <div class="selectContainer hide subtitleCodecFilters">
+                    <select is="emby-select" class="selectSubtitleCodecs" data-settingname="SubtitleCodecs" label="${LabelSubtitleCodec}" data-autoallany="false" multiple></select>
+                </div>
+
+                <div class="selectContainer hide subtitleLanguageFilters">
+                    <select is="emby-select" class="selectSubtitleLanguages" data-settingname="SubtitleLanguages" label="${LabelSubtitleLanguage}" data-autoallany="false" multiple></select>
+                </div>
+            </div>
+
+            <div class="verticalSection multiSettingsSection hide">
+
+                <h2 class="sectionTitle">${Features}</h2>
+                <div class="selectContainer hide simpleFilter viewSetting" data-settingname="HasTrailer">
+                    <select is="emby-select" label="${Trailers}">
+                        <option value="">${Any}</option>
+                        <option value="true">${Yes}</option>
+                        <option value="false">${No}</option>
+                    </select>
+                </div>
+
+                <div class="selectContainer hide simpleFilter viewSetting" data-settingname="HasSpecialFeature">
+                    <select is="emby-select" label="${Extras}">
+                        <option value="">${Any}</option>
+                        <option value="true">${Yes}</option>
+                        <option value="false">${No}</option>
+                    </select>
+                </div>
+
+                <div class="selectContainer hide simpleFilter viewSetting" data-settingname="HasThemeSong">
+                    <select is="emby-select" label="${ThemeSongs}">
+                        <option value="">${Any}</option>
+                        <option value="true">${Yes}</option>
+                        <option value="false">${No}</option>
+                    </select>
+                </div>
+
+                <div class="selectContainer hide simpleFilter viewSetting" data-settingname="HasThemeVideo">
+                    <select is="emby-select" label="${ThemeVideos}">
+                        <option value="">${Any}</option>
+                        <option value="true">${Yes}</option>
+                        <option value="false">${No}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="verticalSection multiSettingsSection hide">
+
+                <h2 class="sectionTitle">${Metadata}</h2>
+
+                <div class="selectContainer hide simpleFilter viewSetting" data-settingname="IsLocked">
+                    <select is="emby-select" label="${Locked}">
+                        <option value="">${Any}</option>
+                        <option value="true">${Yes}</option>
+                        <option value="false">${No}</option>
+                    </select>
+                </div>
+
+                <div class="selectContainer hide simpleFilter viewSetting" data-settingname="HasOverview">
+                    <select is="emby-select" label="${Overview}">
+                        <option value="">${Any}</option>
+                        <option value="true">${Yes}</option>
+                        <option value="false">${No}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="verticalSection multiSettingsSection hide">
+                <h3 class="checkboxListLabel">${HeaderMissingMetadata}</h3>
+                <div class="checkboxList">
+                    <label class="viewSetting" data-settingname="HasImdbId">
+                        <input type="checkbox" is="emby-checkbox" class="simpleFilter" data-settingname="HasImdbId" data-invert="true" />
+                        <span>IMDb Id</span>
+                    </label>
+                    <label class="viewSetting" data-settingname="HasTvdbId">
+                        <input type="checkbox" is="emby-checkbox" class="simpleFilter" data-settingname="HasTvdbId" data-invert="true" />
+                        <span>Tvdb Id</span>
+                    </label>
+                    <label class="viewSetting" data-settingname="HasTmdbId">
+                        <input type="checkbox" is="emby-checkbox" class="simpleFilter" data-settingname="HasTmdbId" data-invert="true" />
+                        <span>MovieDb Id</span>
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

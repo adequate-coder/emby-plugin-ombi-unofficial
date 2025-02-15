@@ -1,0 +1,29 @@
+﻿<div is="emby-scroller" class="view flex flex-direction-column scrollFrameY flex-grow withTabs" data-mousewheel="true" data-horizontal="false" data-forcescrollbar="true" data-focusscroll="true" data-bindheader="true">
+    <div class="scrollSlider flex-grow flex-direction-column padded-left padded-left-page padded-right padded-top-page padded-bottom-page settingsContainer">
+        <form class="syncSettingsForm padded-top auto-center">
+
+            <div class="inputContainer">
+                <div class="flex align-items-center">
+                    <div class="flex-grow">
+                        <input is="emby-input" type="text" class="txtSyncTempPath" label="${LabelSyncTempPath}" />
+                    </div>
+                    <button type="button" is="paper-icon-button-light" title="${ButtonSelectDirectory}" aria-label="${ButtonSelectDirectory}" class="btnSelectSyncTempPath emby-input-iconbutton"><i class="md-icon">search</i></button>
+                </div>
+                <div class="fieldDescription">${LabelSyncTempPathHelp}</div>
+            </div>
+            <div class="checkboxContainer checkboxContainer-withDescription">
+                <label>
+                    <input type="checkbox" is="emby-checkbox" class="chkEnableFullSpeedConversion" />
+                    <span>${OptionEnableFullSpeedConversion}</span>
+                </label>
+                <div class="fieldDescription checkboxFieldDescription">${OptionEnableFullSpeedConversionHelp}</div>
+            </div>
+            <br />
+            <div>
+                <button is="emby-button" type="submit" class="raised button-submit block">
+                    <span>${Save}</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

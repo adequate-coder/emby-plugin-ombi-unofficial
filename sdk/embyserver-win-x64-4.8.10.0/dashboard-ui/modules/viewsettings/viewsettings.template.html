@@ -1,0 +1,62 @@
+<div is="emby-scroller" data-horizontal="false" data-forcescrollbar="true" data-focusscroll="true" class="formDialogContent">
+    <div class="scrollSlider">
+        <form class="dialogContentInner dialog-content-centered padded-left padded-right">
+            <div class="verticalSection">
+                <div class="selectContainer viewSetting hide" data-settingname="imageType">
+                    <select is="emby-select" label="${LabelView}" class="selectImageType" data-menu="custom" data-hasitemicon="true">
+                        <option value="primary" data-icon="grid_view">${Primary}</option>
+                        <option value="banner" data-icon="grid_view">${Banner}</option>
+                        <option value="disc" data-icon="grid_view">${Disc}</option>
+                        <option value="logo" data-icon="grid_view">${Logo}</option>
+                        <option value="thumb" data-icon="grid_view">${Thumb}</option>
+                        <option value="list" data-icon="menu">${List}</option>
+                        <option value="datagrid" data-icon="table_view">${Table}</option>
+                    </select>
+                </div>
+
+                <div class="selectContainer fldCardSize hide">
+                    <select is="emby-select" class="selectCardSize" label="${LabelImageSize}">
+                        <option value="extrasmall">${ExtraSmall}</option>
+                        <option value="smaller">${Smaller}</option>
+                        <option value="small">${Small}</option>
+                        <option value="normal">${Medium}</option>
+                        <option value="">${Default}</option>
+                        <option value="large">${Large}</option>
+                        <option value="larger">${Larger}</option>
+                        <option value="extralarge">${ExtraLarge}</option>
+                    </select>
+                    <div class="fieldDescription">${ImageSizeHelp}</div>
+                </div>
+
+                <div class="checkboxContainer viewSetting viewSetting-checkboxContainer hide" data-settingname="groupBySeries">
+                    <label>
+                        <input is="emby-checkbox" type="checkbox" />
+                        <span>${GroupBySeries}</span>
+                    </label>
+                </div>
+
+                <div class="checkboxContainer checkboxContainer-withDescription viewSetting viewSetting-checkboxContainer hide chkGroupItemsIntoCollections" data-settingname="groupItemsIntoCollections">
+                    <label>
+                        <input is="emby-checkbox" type="checkbox" />
+                        <span>${GroupItemsIntoCollections}</span>
+                    </label>
+                    <div class="fieldDescription checkboxFieldDescription">${GroupItemsIntoCollectionsHelp}</div>
+                </div>
+
+                <div class="checkboxContainer checkboxContainer-withDescription viewSetting viewSetting-checkboxContainer hide chkGroupItemsIntoTags" data-settingname="groupItemsIntoTags">
+                    <label>
+                        <input is="emby-checkbox" type="checkbox" />
+                        <span>${GroupItemsIntoTags}</span>
+                    </label>
+                    <div class="fieldDescription checkboxFieldDescription">${GroupItemsIntoTagsHelp}</div>
+                </div>
+
+                <div class="verticalSection showFieldsSection hide">
+                    <h2 class="checkboxListLabel">${HeaderShowFields}</h2>
+                    <div class="checkboxList">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,148 @@
+﻿<div is="emby-scroller" data-horizontal="false" data-focusscroll="true" data-navcommands="card" data-forcescrollbar="true" class="scrollFrameY flex flex-direction-column flex-grow" data-bindheader="true">
+    <div class="scrollSlider flex-grow padded-top-page padded-left padded-right padded-bottom-page">
+        <div class="readOnlyContent auto-center padded-top">
+
+            <form class="liveTvSettingsForm">
+                <div class="selectContainer fldBufferSize hide">
+                    <select is="emby-select" class="selectBufferSize" label="${LiveBufferSizeHours}">
+                        <option value="0">${Unlimited}</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <div class="fieldDescription">${LiveBufferSizeHoursHelp}</div>
+                </div>
+                <div class="selectContainer">
+                    <select is="emby-select" class="selectGuideDays" label="${LabelNumberOfGuideDays}">
+                        <option value="">${Auto}</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                    </select>
+                    <div class="fieldDescription">${LabelNumberOfGuideDaysHelp}</div>
+                </div>
+                <div class="checkboxContainer checkboxContainer-withDescription fldWakeServer hide">
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="chkWakeServer" />
+                        <span>${LabelAutomaticallyWakeServerForRecordings}</span>
+                    </label>
+                    <div class="fieldDescription checkboxFieldDescription">${LabelAutomaticallyWakeServerForRecordingsHelp}</div>
+                </div>
+
+                <div class="selectContainer fldRecordingFolder hide fldRecordingFolderById">
+                    <label>
+                        <select is="emby-select" label="${LabelDefaultRecordingFolder}" class="selectRecordingFolder" data-itemsecondarytext="true" data-virtualscroll="false">
+                        </select>
+                    </label>
+                    <div class="fieldDescription">${RecordingFolderHelp}</div>
+                </div>
+
+                <div class="selectContainer fldMovieRecordingFolder hide fldRecordingFolderById">
+                    <label>
+                        <select is="emby-select" label="${LabelMovieRecordingFolder}" class="selectMovieRecordingFolder" data-itemsecondarytext="true" data-virtualscroll="false">
+                        </select>
+                    </label>
+                    <div class="fieldDescription">${MovieRecordingFolderHelp}</div>
+                </div>
+
+                <div class="selectContainer fldSeriesRecordingFolder hide fldRecordingFolderById">
+                    <label>
+                        <select is="emby-select" label="${LabelSeriesRecordingFolder}" class="selectSeriesRecordingFolder" data-itemsecondarytext="true" data-virtualscroll="false">
+                        </select>
+                    </label>
+                    <div class="fieldDescription">${SeriesRecordingFolderHelp}</div>
+                </div>
+
+                <div class="inputContainer hide fldRecordingFolderByPath">
+                    <div class="flex align-items-center">
+                        <div class="flex-grow">
+                            <input is="emby-input" class="txtRecordingPath" label="${LabelDefaultRecordingFolder}" autocomplete="off" />
+                        </div>
+                        <button type="button" is="paper-icon-button-light" title="${ButtonSelectDirectory}" aria-label="${ButtonSelectDirectory}" class="btnSelectRecordingPath emby-input-iconbutton"><i class="md-icon">search</i></button>
+                    </div>
+                    <div class="fieldDescription">${RecordingFolderHelp}</div>
+                </div>
+                <div class="inputContainer hide fldRecordingFolderByPath">
+                    <div class="flex align-items-center">
+                        <div class="flex-grow">
+                            <input is="emby-input" class="txtMovieRecordingPath" label="${LabelMovieRecordingFolder}" autocomplete="off" />
+                        </div>
+                        <button type="button" is="paper-icon-button-light" title="${ButtonSelectDirectory}" aria-label="${ButtonSelectDirectory}" class="btnSelectMovieRecordingPath emby-input-iconbutton"><i class="md-icon">search</i></button>
+                    </div>
+                    <div class="fieldDescription">${MovieRecordingFolderHelp}</div>
+                </div>
+                <div class="inputContainer hide fldRecordingFolderByPath">
+                    <div class="flex align-items-center">
+                        <div class="flex-grow">
+                            <input is="emby-input" class="txtSeriesRecordingPath" label="${LabelSeriesRecordingFolder}" autocomplete="off" />
+                        </div>
+                        <button type="button" is="paper-icon-button-light" title="${ButtonSelectDirectory}" aria-label="${ButtonSelectDirectory}" class="btnSelectSeriesRecordingPath emby-input-iconbutton"><i class="md-icon">search</i></button>
+                    </div>
+                    <div class="fieldDescription">${SeriesRecordingFolderHelp}</div>
+                </div>
+                <div class="verticalSection">
+                    <h2 class="sectionTitle">${HeaderDefaultRecordingSettings}</h2>
+                    <div class="inputContainer">
+                        <div class="flex align-items-center">
+                            <div class="flex-grow">
+                                <input is="emby-input" type="number" class="txtPrePaddingMinutes" inputmode="numeric" required="required" min="-15" step="1" label="${LabelStartWhenPossible}" />
+                            </div>
+                            <div class="fieldDescription" style="margin:1.7em .5em 0;font-size:90%;">
+                                ${MinutesBefore}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inputContainer">
+                        <div class="flex align-items-center">
+                            <div class="flex-grow">
+                                <input is="emby-input" type="number" class="txtPostPaddingMinutes" inputmode="numeric" required="required" min="-15" step="1" label="${LabelStopWhenPossible}" />
+                            </div>
+                            <div class="fieldDescription" style="margin:1.7em .5em 0;font-size:90%;">
+                                ${MinutesAfter}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="verticalSection">
+                    <h2 class="sectionTitle">${HeaderRecordingPostProcessing}</h2>
+                    <div class="inputContainer">
+                        <div class="flex align-items-center">
+                            <div class="flex-grow">
+                                <input is="emby-input" type="text" class="txtPostProcessor" label="${LabelPostProcessor}" />
+                            </div>
+                            <button type="button" is="paper-icon-button-light" class="btnSelectPostProcessorPath emby-input-iconbutton"><i class="md-icon">search</i></button>
+                        </div>
+                    </div>
+                    <div class="inputContainer">
+                        <input is="emby-input" type="text" class="txtPostProcessorArguments" label="${LabelPostProcessorArguments}" />
+                        <div class="fieldDescription">${PostProcessorArgumentsHelp}</div>
+                        <div class="fieldDescription postProcessorArgument">${DvrPostProcessorPathArgument}</div>
+                        <div class="fieldDescription extraPostProcessingArgs hide"></div>
+                    </div>
+                </div>
+                <br />
+                <div>
+                    <button is="emby-button" type="submit" class="raised button-submit block"><span>${Save}</span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

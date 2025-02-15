@@ -1,0 +1,36 @@
+﻿<form>
+
+    <div class="inputContainer fldStartTime hide">
+        <input is="emby-input" class="txtStartTime" type="datetime-local" label="${LabelStartTime}" step="60" />
+    </div>
+
+    <div class="inputContainer fldEndTime hide">
+        <input is="emby-input" class="txtEndTime" type="datetime-local" label="${LabelEndTime}" step="60" />
+    </div>
+
+    <div class="inputContainer">
+        <div class="flex align-items-center">
+            <div class="flex-grow">
+                <input is="emby-input" type="number" class="txtPrePaddingMinutes" inputmode="numeric" required="required" min="-15" step="1" label="${LabelStartWhenPossible}" />
+            </div>
+            <div class="fieldDescription" style="margin:1.7em .5em 0;font-size:90%;">
+                ${MinutesBefore}
+            </div>
+        </div>
+    </div>
+    <div class="inputContainer">
+        <div class="flex align-items-center">
+            <div class="flex-grow">
+                <input is="emby-input" type="number" class="txtPostPaddingMinutes" inputmode="numeric" required="required" min="-15" step="1" label="${LabelStopWhenPossible}" />
+            </div>
+            <div class="fieldDescription" style="margin:1.7em .5em 0;font-size:90%;">
+                ${MinutesAfter}
+            </div>
+        </div>
+    </div>
+    <div class="formDialogFooter hide">
+        <button is="emby-button" type="submit" class="raised btnSubmit block formDialogFooterItem button-submit hide">
+            <span>${Save}</span>
+        </button>
+    </div>
+</form>

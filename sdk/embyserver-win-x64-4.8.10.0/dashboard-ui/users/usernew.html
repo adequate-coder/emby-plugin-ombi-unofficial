@@ -1,0 +1,78 @@
+﻿<div is="emby-scroller" class="view flex flex-direction-column scrollFrameY flex-grow" data-mousewheel="true" data-horizontal="false" data-forcescrollbar="true" data-focusscroll="true" data-bindheader="true">
+    <div class="scrollSlider flex-grow flex-direction-column padded-left padded-left-page padded-right padded-top-page padded-bottom-page settingsContainer">
+        <form class="newUserProfileForm auto-center padded-top">
+
+            <div class="verticalSection">
+
+                <div class="inputContainer">
+                    <input is="emby-input" class="txtUserName" required type="text" label="${LabelName}" />
+                    <div class="fieldDescription">${NewUserNameHelp}</div>
+                </div>
+            </div>
+
+            <div class="selectContainer fldCopyFromUser">
+                <label>
+                    <select is="emby-select" label="${LabelCopyFromUser}" class="selectCopyFromUser" data-hasitemimage="true">
+                    </select>
+                </label>
+                <div class="fieldDescription">${CopyFromUserHelp}</div>
+            </div>
+
+            <div class="copyOptionsContainer checkboxListContainer hide">
+
+                <h3 class="sectionTitle">${HeaderCopyOptions}</h3>
+                <div class="checkboxList">
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="chkCopyUserPolicy" checked />
+                        <span>${UserPolicy}</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="chkCopyUserConfiguration" checked />
+                        <span>${UserConfiguration}</span>
+                    </label>
+                </div>
+            </div>
+
+            <label class="checkboxContainer">
+                <input type="checkbox" is="emby-checkbox" class="chkIsAdmin" />
+                <span>${OptionAllowUserToManageServer}</span>
+            </label>
+
+            <div class="folderAccessContainer checkboxListContainer hide verticalSection">
+                <h3 class="sectionTitle">${HeaderLibraryAccess}</h3>
+                <div class="checkboxList">
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="chkEnableAllFolders" />
+                        <span>${All}</span>
+                    </label>
+                    <div class="folderAccess checkboxList">
+                    </div>
+                </div>
+                <div class="fieldDescription">${LibraryAccessHelp}</div>
+            </div>
+
+            <div class="channelAccessContainer checkboxListContainer hide verticalSection hide">
+                <h3 class="sectionTitle">${HeaderChannelAccess}</h3>
+                <div class="checkboxList">
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="chkEnableAllChannels" />
+                        <span>${All}</span>
+                    </label>
+                    <div class="channelAccess checkboxList">
+                    </div>
+                </div>
+                <div class="fieldDescription">${ChannelAccessHelp}</div>
+            </div>
+
+            <div>
+                <button is="emby-button" type="submit" class="raised button-submit block">
+                    <span>${Save}</span>
+                </button>
+
+                <button is="emby-button" type="button" class="raised button-cancel block btnCancel">
+                    <span>${Cancel}</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

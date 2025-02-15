@@ -1,0 +1,15 @@
+{
+    "MediaType": "\u5a92\u9ad4\u985e\u578b",
+    "ExternalPlayers": "\u5916\u90e8\u64ad\u653e\u5668",
+    "ExternalPlayer": "\u5916\u90e8\u64ad\u653e\u5668",
+    "PlayerPath": "\u64ad\u653e\u5668\u8def\u5f91",
+    "ArgumentsHelp": "\u6bcf\u500b\u53c3\u6578\u5360\u4e00\u884c\u3002",
+    "TokenPath": "{path} = \u5a92\u9ad4\u6587\u4ef6\u7684\u8def\u5f91",
+    "EnableFor": "\u555f\u7528:",
+    "VideoFiles": "\u8996\u983b\u6a94\u6848",
+    "InternetStreams": "\u4e92\u806f\u7db2\u4e32\u6d41",
+    "CommandLineArguments": "\u6307\u4ee4\u884c\u53c3\u6578",
+    "TokenStartPosMs": "{ms} = \u8d77\u59cb\u4f4d\u7f6e\u6beb\u79d2",
+    "TokenStartPosSeconds": "{Seconds}=\u64ad\u653e\u8d77\u59cb\u79d2\u6578",
+    "AdditionalFilters": "\u9644\u52a0\u7be9\u9078\u5668:"
+}

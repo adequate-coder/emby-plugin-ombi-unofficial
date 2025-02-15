@@ -1,0 +1,1 @@
+globalThis.addEventListener("sync",function(event){event.tag});

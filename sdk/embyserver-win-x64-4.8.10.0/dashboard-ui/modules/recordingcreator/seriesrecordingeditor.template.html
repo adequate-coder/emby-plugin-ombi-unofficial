@@ -1,0 +1,95 @@
+﻿<form>
+    <div class="selectContainer">
+        <select is="emby-select" class="selectShowType" label="${Record}">
+            <option value="new">${NewEpisodesOnly}</option>
+            <option value="all">${AllEpisodes}</option>
+        </select>
+    </div>
+
+    <div class="checkboxContainer checkboxContainer-withDescription">
+        <label>
+            <input type="checkbox" is="emby-checkbox" class="chkSkipEpisodesInLibrary" />
+            <span>${SkipEpisodesAlreadyInMyLibrary}</span>
+        </label>
+        <div class="fieldDescription checkboxFieldDescription">${SkipEpisodesAlreadyInMyLibraryHelp}</div>
+    </div>
+
+    <div class="fldCheckAllLibraries hide checkboxContainer">
+        <label>
+            <input type="checkbox" is="emby-checkbox" class="chkCheckAllLibraries" />
+            <span>${CheckForExistingEpisodesInAllLibraries}</span>
+        </label>
+    </div>
+
+    <div class="selectContainer fldChannels">
+        <select is="emby-select" class="selectChannels" label="${Channels}" multiple>
+        </select>
+    </div>
+
+    <div class="selectContainer fldKeywordType hide">
+        <select is="emby-select" class="selectKeywordType" label="${LabelKeywordType}">
+            <option value="Name">${Title}</option>
+            <option value="EpisodeTitle">${EpisodeTitle}</option>
+            <option value="Overview">${Overview}</option>
+        </select>
+    </div>
+
+    <div class="inputContainer fldKeyword hide">
+        <input is="emby-input" class="txtKeyword" type="text" label="${Keyword}" />
+    </div>
+
+    <div class="selectContainer fldAirDays">
+        <select is="emby-select" class="selectAirDays" label="${LabelAirDays}" multiple data-virtualscroll="false">
+        </select>
+    </div>
+
+    <div class="selectContainer fldAirTime hide">
+        <select is="emby-select" class="selectAirTime" label="${LabelAirTime}">
+            <option class="optionAroundTime" value="original"></option>
+            <option value="any">${Anytime}</option>
+        </select>
+    </div>
+
+    <div class="selectContainer">
+        <select is="emby-select" class="selectKeepUpTo" label="${LabelKeepUpTo}"></select>
+        <div class="fieldDescription">${KeepUpToHelp}</div>
+    </div>
+
+    <div class="inputContainer">
+        <div class="flex align-items-center">
+            <div class="flex-grow">
+                <input is="emby-input" type="number" class="txtPrePaddingMinutes" inputmode="numeric" required="required" min="-15" step="1" label="${LabelStartWhenPossible}" />
+            </div>
+            <div class="fieldDescription" style="margin:1.7em .5em 0;font-size:90%;">
+                ${MinutesBefore}
+            </div>
+        </div>
+    </div>
+
+    <div class="inputContainer">
+        <div class="flex align-items-center">
+            <div class="flex-grow">
+                <input is="emby-input" type="number" class="txtPostPaddingMinutes" inputmode="numeric" required="required" min="-15" step="1" label="${LabelStopWhenPossible}" />
+            </div>
+            <div class="fieldDescription" style="margin:1.7em .5em 0;font-size:90%;">
+                ${MinutesAfter}
+            </div>
+        </div>
+    </div>
+
+    <div class="inputContainer fldMaxRecordingLength">
+        <div class="flex align-items-center">
+            <div class="flex-grow">
+                <input is="emby-input" type="number" class="txtMaxRecordingLength" inputmode="numeric" required="required" min="0" step="1" label="${LabelMaxRecordingLength}" />
+            </div>
+            <div class="fieldDescription" style="margin:1.7em .5em 0;font-size:90%;">
+                ${Minutes}
+            </div>
+        </div>
+        <div class="fieldDescription">${MaxRecordingLengthHelp}</div>
+    </div>
+
+    <button is="emby-button" type="submit" class="raised btnSubmit block formDialogFooterItem button-submit hide">
+        <span>${Save}</span>
+    </button>
+</form>

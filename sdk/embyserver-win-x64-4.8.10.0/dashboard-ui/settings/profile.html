@@ -1,0 +1,116 @@
+﻿<div is="emby-scroller" class="view flex flex-direction-column scrollFrameY flex-grow" data-mousewheel="true" data-horizontal="false" data-forcescrollbar="true" data-focusscroll="true" data-bindheader="true">
+    <div class="scrollSlider flex-grow flex-direction-column padded-left padded-left-page padded-right padded-top-page padded-bottom-page settingsContainer">
+
+        <div class="readOnlyContent padded-top auto-center flex align-items-center">
+
+            <div class="fldImage"></div>
+
+            <div>
+                <h2 class="username" style="margin: 0 0 .5em;"></h2>
+
+                <button is="emby-button" type="button" class="raised hide btnDeleteImage" style="margin:0;">
+                    <span>${HeaderDeleteImage}</span>
+                </button>
+            </div>
+        </div>
+
+        <form class="newImageForm userProfileSettingsForm hide auto-center" style="margin-top:2em;">
+
+            <div class="flex align-items-center" style="margin:1.5em 0;">
+                <h2 style="margin:0;">${HeaderUploadNewImage}</h2>
+
+                <button is="emby-button" type="button" class="fab btnBrowse" style="margin:0 1em;" title="${Browse}" aria-label="${Browse}">
+                    <i class="md-icon fab-icon">folder</i>
+                </button>
+            </div>
+
+            <div class="fldNewImage">
+
+                <div class="userImageDropZone imageDropZone fieldDescription">
+
+                    <output class="userImageOutput flex align-items-center justify-content-center" style="position: absolute;top:0;left:0;right:0;bottom:0;width:100%;"></output>
+
+                    <label>
+                        <input type="file" accept="image/*" class="uploadUserImage emby-file-input" name="uploadUserImage" style="position: absolute;top:0;left:0;right:0;bottom:0;width:100%;" />
+                        <div>${LabelDropImageHere}</div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="fldUpload hide" style="margin-top:1em;">
+                <button is="emby-button" type="submit" class="raised button-submit block">${Upload}</button>
+            </div>
+
+        </form>
+
+        <form class="updatePasswordForm passwordSection userProfileSettingsForm hide auto-center padded-top" style="margin-top: 1em;">
+
+            <fieldset>
+                <legend>
+                    ${Password}
+                </legend>
+                <div class="fldCurrentPassword inputContainer hide">
+                    <input is="emby-input" type="password" class="txtCurrentPassword" label="${LabelCurrentPassword}" autocomplete="off" />
+                </div>
+                <div class="inputContainer">
+                    <input is="emby-input" type="password" class="txtNewPassword" label="${LabelNewPassword}" autocomplete="off" required />
+                </div>
+                <div class="inputContainer">
+                    <input is="emby-input" type="password" class="txtNewPasswordConfirm" label="${LabelNewPasswordConfirm}" autocomplete="off" required />
+                </div>
+                <div>
+                    <button is="emby-button" type="submit" class="raised button-submit block"><span>${SavePassword}</span></button>
+                </div>
+                <button is="emby-button" type="button" class="btnResetPassword raised button-cancel block hide">
+                    <span>${HeaderRemovePassword}</span>
+                </button>
+            </fieldset>
+        </form>
+
+        <form class="profilePinForm userProfileSettingsForm hide auto-center padded-top" style="margin-top: 1em;">
+
+            <fieldset>
+                <legend>
+                    ${TitleProfilePin}
+                </legend>
+                <p class="fieldDescription legendDescription">
+                    ${ProfilePinDescription}
+                </p>
+                <div class="inputContainer">
+                    <input is="emby-input" type="text" class="txtProfilePin" label="${TitleProfilePin}" autocomplete="off" minlength="4" maxlength="4" size="4" pattern="\d{4,4}" inputmode="numeric" />
+                    <div class="fieldDescription pinFieldDescription"></div>
+                </div>
+                <div>
+                    <button is="emby-button" type="submit" class="raised button-submit block"><span>${SaveProfilePin}</span></button>
+                </div>
+            </fieldset>
+        </form>
+
+        <form class="localAccessForm localAccessSection auto-center hide" style="margin-top: 3em;">
+
+            <fieldset>
+                <legend>
+                    ${HeaderLocalNetworkAccess}
+                </legend>
+                <div class="selectContainer fldInNetworkPasswordMode">
+                    <select is="emby-select" class="selectInNetworkPasswordMode" label="${LabelLocalNetworkPasswordMode}">
+                        <option value="password">${RequirePasswordInLocalNetwork}</option>
+                        <option value="nopassword">${NoPasswordInLocalNetwork}</option>
+                        <option value="pin">${PinCodeInLocalNetwork}</option>
+                    </select>
+                    <div class="fieldDescription">${LocalNetworkPasswordModeHelp}</div>
+                </div>
+                <div class="inputContainer fldInNetworkPassword hide">
+                    <input placeholder="*****" is="emby-input" type="number" class="txtInNetworkPassword" label="${LabelLocalNetworkPinCode}" autocomplete="off" pattern="[0-9]*" step="1" maxlength="5" />
+                </div>
+                <div>
+                    <button is="emby-button" type="submit" class="raised button-submit block">
+                        <span>${Save}</span>
+                    </button>
+                </div>
+
+            </fieldset>
+        </form>
+
+    </div>
+</div>

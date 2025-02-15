@@ -1,0 +1,1 @@
+define(["exports"],function(_exports){Object.defineProperty(_exports,"__esModule",{value:!0}),_exports.default=void 0;_exports.default={paramsToString:function(params){var key,urlSearchParams=new URLSearchParams;for(key in params){var value=params[key];null!=value&&""!==value&&urlSearchParams.set(key,value)}return urlSearchParams.toString()}}});

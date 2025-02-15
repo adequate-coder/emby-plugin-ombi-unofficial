@@ -1,0 +1,15 @@
+{
+    "MediaType": "Tipo di media",
+    "ExternalPlayers": "Riproduttori esterni",
+    "ExternalPlayer": "Riproduttore esterno",
+    "PlayerPath": "Percorso riproduttore",
+    "ArgumentsHelp": "Inserisci ogni argomento su una linea separata.",
+    "TokenPath": "{path} = percorso del file multimediale",
+    "EnableFor": "Abilita per:",
+    "VideoFiles": "File video",
+    "InternetStreams": "Stream Internet",
+    "CommandLineArguments": "Argomenti da linea di comando",
+    "TokenStartPosMs": "{ms} = posizione iniziale ms",
+    "TokenStartPosSeconds": "{Seconds} = secondi di inizio posizione",
+    "AdditionalFilters": "Filtri aggiuntivi:"
+}

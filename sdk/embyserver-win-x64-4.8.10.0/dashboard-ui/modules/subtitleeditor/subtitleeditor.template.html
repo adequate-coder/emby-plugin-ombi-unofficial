@@ -1,0 +1,43 @@
+﻿<div class="formDialogHeader">
+    <button type="button" is="emby-dialogclosebutton" closetype="done"></button>
+    <h3 class="formDialogHeaderTitle">${Subtitles}</h3>
+
+    <a is="emby-linkbutton" data-autohide="true" class="button-link noautofocus btnHelp flex align-items-center dialogHeaderButton button-help" href="https://support.emby.media/support/solutions/articles/44001159160-subtitles" target="_blank" title="${Help}" aria-label="${Help}"><i class="md-icon button-icon button-icon-left autortl-arabic">&#xe887;</i></a>
+
+</div>
+<div is="emby-scroller" data-horizontal="false" data-forcescrollbar="true" data-focusscroll="true" class="formDialogContent">
+    <div class="scrollSlider">
+        <div class="dialogContentInner dialog-content-centered padded-left padded-right">
+
+            <h3 class="originalFile secondaryText" style="margin-top: 0;"></h3>
+
+            <div class="subtitleList padded-bottom hide" is="emby-itemscontainer"></div>
+
+            <div class="subtitleSearchContainer hide">
+                <h2 class="subtitleSearchHeader secondaryText flex align-items-center">
+                    <span class="subtitleSearchHeaderText">${SearchForSubtitles}</span>
+                </h2>
+                <form class="subtitleSearchForm" style="max-width: none;">
+                    <div class="flex align-items-center" style="margin-bottom:1.8em;">
+                        <div style="margin-bottom:0;" class="selectContainer flex-grow">
+                            <select is="emby-select" class="selectLanguage" required="required" label="${LabelLanguage}"></select>
+                        </div>
+                    </div>
+                    <div class="checkboxContainer checkboxContainer-withDescription fldForcedOnly hide">
+                        <label>
+                            <input is="emby-checkbox" type="checkbox" class="chkForcedOnly" />
+                            <span>${SearchForForcedSubtitlesOnly}</span>
+                        </label>
+                        <div class="fieldDescription checkboxFieldDescription">${SearchForForcedSubtitlesOnlyHelp}</div>
+                    </div>
+
+                    <button is="emby-button" type="submit" class="raised btnSubmit block button-submit" style="margin-top:3em;">${Search}</button>
+                </form>
+
+                <div class="subtitleResults padded-top" style="margin-top:1em;" is="emby-itemscontainer"></div>
+                <div class="noSearchResults hide" style="text-align:center;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

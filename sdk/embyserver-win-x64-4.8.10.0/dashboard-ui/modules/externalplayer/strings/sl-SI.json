@@ -1,0 +1,15 @@
+{
+    "MediaType": "Vrsta medija",
+    "ExternalPlayers": "Zunanji predvajalniki",
+    "ExternalPlayer": "Zunanji predvajalnik",
+    "PlayerPath": "Pot predvajalnika",
+    "ArgumentsHelp": "Vsak argument postavite v lo\u010deno vrstico.",
+    "TokenPath": "{path} = pot do medijske datoteke",
+    "EnableFor": "Omogo\u010di za",
+    "VideoFiles": "Video datoteke",
+    "InternetStreams": "Internetni tokovi",
+    "CommandLineArguments": "Argumenti ukazne vrstice",
+    "TokenStartPosMs": "{ms} = za\u010detni polo\u017eaj ms",
+    "TokenStartPosSeconds": "{Seconds} = za\u010detni polo\u017eaj v sekundah",
+    "AdditionalFilters": "Dodatni filtri"
+}

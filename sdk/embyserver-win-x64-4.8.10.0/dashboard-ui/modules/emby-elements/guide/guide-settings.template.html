@@ -1,0 +1,70 @@
+﻿<div class="formDialogHeader">
+    <button type="button" is="emby-dialogclosebutton" closetype="done"></button>
+    <h3 class="formDialogHeaderTitle">
+        ${Settings}
+    </h3>
+</div>
+<div is="emby-scroller" data-horizontal="false" data-forcescrollbar="true" data-focusscroll="true" class="formDialogContent">
+    <form class="scrollSlider dialogContentInner dialog-content-centered padded-left padded-right">
+
+        <div class="selectContainer">
+            <select is="emby-select" label="${SortChannelsBy}" class="selectChannelSort">
+            </select>
+        </div>
+
+        <div class="selectContainer fldTags hide">
+            <label>
+                <select is="emby-select" label="${LabelChannelTags}" class="selectTags" data-autoallany="false" multiple>
+                </select>
+            </label>
+        </div>
+
+        <div class="selectContainer">
+            <label>
+                <select is="emby-select" label="${LabelChannelDisplay}" class="selectChannelDisplay">
+                    <option value="image">${Image}</option>
+                    <option value="name">${Title}</option>
+                    <option value="both">${Both}</option>
+                </select>
+            </label>
+        </div>
+
+        <h3 class="checkboxListLabel">${HeaderShowFields}</h3>
+        <div class="checkboxList">
+            <label>
+                <input type="checkbox" is="emby-checkbox" class="chkChannelNumber" />
+                <span>${ChannelNumber}</span>
+            </label>
+            <label>
+                <input type="checkbox" is="emby-checkbox" class="chkIndicator" data-type="4k" data-default="true" />
+                <span>4K</span>
+            </label>
+            <label>
+                <input type="checkbox" is="emby-checkbox" class="chkIndicator" data-type="hd" />
+                <span>HD</span>
+            </label>
+            <label>
+                <input type="checkbox" is="emby-checkbox" class="chkIndicator" data-type="live" data-default="true" />
+                <span>${Live}</span>
+            </label>
+            <label>
+                <input type="checkbox" is="emby-checkbox" class="chkIndicator" data-type="new" />
+                <span>${AttributeNew}</span>
+            </label>
+            <label>
+                <input type="checkbox" is="emby-checkbox" class="chkIndicator" data-type="premiere" data-default="true" />
+                <span>${Premiere}</span>
+            </label>
+            <label>
+                <input type="checkbox" is="emby-checkbox" class="chkIndicator" data-type="repeat" />
+                <span>${Repeat}</span>
+            </label>
+        </div>
+
+        <label class="checkboxContainer">
+            <input type="checkbox" is="emby-checkbox" class="chkColorCodedBackgrounds" />
+            <span>${EnableColorCodedBackgrounds}</span>
+        </label>
+
+    </form>
+</div>

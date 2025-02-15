@@ -1,0 +1,40 @@
+﻿<div is="emby-scroller" data-horizontal="false" data-focusscroll="true" data-navcommands="card" data-forcescrollbar="true" class="scrollFrameY flex flex-grow" data-bindheader="true">
+    <div class="scrollSlider flex-grow padded-top-page padded-left padded-right">
+
+        <div is="emby-premierecontainer" class="verticalSection padded-bottom padded-top premiereInfo sectionTitle-cards" style="margin-top:0;">
+
+        </div>
+
+        <div class="verticalSection">
+            <div class="sectionTitleContainer sectionTitleContainer-cards flex align-items-center flex-wrap-wrap">
+                <h2 class="sectionTitle sectionTitle-cards">
+                    <span>${HeaderTVSources}</span>
+                </h2>
+                <button is="emby-button" type="button" class="raised raised-mini btnAddDevice submit sectionTitleButton">
+                    <i class="md-icon button-icon button-icon button-icon-left">&#xe145;</i>
+                    <span>${HeaderAddTvSource}</span>
+                </button>
+
+                <button is="emby-button" type="button" class="raised raised-mini btnRefresh button-cancel sectionTitleButton">
+                    <i class="md-icon button-icon button-icon-left">refresh</i>
+                    <span>${ButtonRefreshGuideData}</span>
+                </button>
+                <div class="refreshGuideProgress itemProgressBar itemProgressBarRound hide sectionTitleButton" style="width:10em;"></div>
+
+            </div>
+            <div class="devicesList itemsContainer vertical-wrap itemsContainer-defaultCardSize" is="emby-itemscontainer" style="margin-top: .5em;" data-monitor="LiveTVTunerDevices"></div>
+        </div>
+
+        <div class="verticalSection">
+            <div class="sectionTitleContainer sectionTitleContainer-cards flex align-items-center flex-wrap-wrap">
+                <h2 class="sectionTitle sectionTitle-cards">${HeaderGuideProviders}</h2>
+                <button is="emby-button" type="button" class="raised raised-mini btnAddProvider submit sectionTitleButton">
+                    <i class="md-icon button-icon button-icon button-icon-left">&#xe145;</i>
+                    <span>${HeaderAddGuideSource}</span>
+                </button>
+            </div>
+
+            <div class="providerList itemsContainer vertical-wrap" is="emby-itemscontainer" style="margin-top: .5em;" data-monitor="LiveTVGuideSources"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+﻿<div is="emby-scroller" class="view flex flex-direction-column scrollFrameY flex-grow" data-mousewheel="true" data-horizontal="false" data-forcescrollbar="true" data-focusscroll="true" data-bindheader="true">
+    <div class="scrollSlider flex-grow flex-direction-column padded-left padded-right padded-top-page padded-bottom-page">
+
+        <div class="verticalSection">
+            <div class="sectionTitleContainer flex align-items-center justify-content-center" style="margin:0;">
+                <h2 class="sectionTitle">${HeaderSetupLibrary}</h2>
+            </div>
+        </div>
+
+        <div class="flex align-items-center justify-content-center focuscontainer-x itemsViewSettingsContainer padded-top padded-bottom">
+            <div class="listTotalRecordCount">
+            </div>
+        </div>
+
+        <div is="emby-itemscontainer" class="vertical-wrap itemsContainer centered">
+        </div>
+
+        <div class="flex justify-content-center padded-top">
+            <button is="emby-button" type="button" class="raised button-cancel" onclick="history.back();"><i class="md-icon button-icon button-icon-left autortl">&#xe5C4;</i><span>${Previous}</span></button>
+            <button is="emby-button" type="button" class="raised button-submit btnWizardNext"><span>${Next}</span><i class="md-icon button-icon button-icon-right autortl">&#xe5c8;</i></button>
+        </div>
+    </div>
+</div>

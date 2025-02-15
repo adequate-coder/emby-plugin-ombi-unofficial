@@ -1,0 +1,1 @@
+"function"!=typeof Number.isInteger&&(Number.isInteger=function(value){return"number"==typeof value&&isFinite(value)&&Math.floor(value)===value});

@@ -1,0 +1,45 @@
+﻿<div class="formDialogHeader">
+    <button type="button" is="emby-dialogclosebutton" closetype="done"></button>
+    <h3 class="formDialogHeaderTitle">
+        ${HeaderEditImages}
+    </h3>
+</div>
+
+<div is="emby-scroller" data-horizontal="false" data-forcescrollbar="true" data-focusscroll="true" class="formDialogContent">
+    <div class="scrollSlider">
+        <div class="dialogContentInner padded-left padded-right">
+
+            <div class="verticalSection verticalSection-extrabottompadding">
+
+                <div class="sectionTitleContainer sectionTitleContainer-cards">
+
+                    <h2 class="sectionTitle sectionTitle-cards">${Images}</h2>
+                </div>
+
+                <div class="sectionTitleContainer sectionTitleContainer-cards secondaryText tvChannelHelp hide">
+
+                    <div class="sectionTitle sectionTitle-cards" style="white-space:normal;">${TVChannelImageEditorHelp}</div>
+                </div>
+
+                <div is="emby-itemscontainer" class="images itemsContainer vertical-wrap itemsContainer-defaultCardSize">
+                </div>
+            </div>
+
+            <div class="backdropsContainer verticalSection">
+                <div class="sectionTitleContainer sectionTitleContainer-cards focuscontainer-x">
+
+                    <h2 class="sectionTitle sectionTitle-cards">${Backdrops}</h2>
+                    <button type="button" is="paper-icon-button-light" class="btnBrowseAllImages sectionTitleIconButton" data-imagetype="Backdrop" title="${HeaderSearchForImages}" aria-label="${HeaderSearchForImages}">
+                        <i class="md-icon">search</i>
+                    </button>
+                    <button type="button" is="paper-icon-button-light" class="btnAddImage sectionTitleIconButton hide" data-imagetype="Backdrop" title="${HeaderSelectImageFile}" aria-label="${HeaderSelectImageFile}">
+                        <i class="md-icon">&#xe148;</i>
+                    </button>
+                </div>
+
+                <div is="emby-itemscontainer" class="backdrops itemsContainer vertical-wrap itemsContainer-defaultCardSize">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

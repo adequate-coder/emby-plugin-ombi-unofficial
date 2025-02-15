@@ -1,0 +1,36 @@
+﻿<div class="formDialogHeader formDialogHeader-clear profilePinDialogHeader">
+    <button type="button" is="emby-dialogclosebutton"></button>
+    <h3 class="formDialogHeaderTitle"></h3>
+</div>
+
+<div is="emby-scroller" data-horizontal="false" data-focusscroll="true" class="formDialogContent profilePinScroller">
+    <div class="scrollSlider">
+        <form class="dialogContentInner profilePinDialogContentInner dialog-content-centered padded-left padded-right">
+
+            <div class="flex align-items-center justify-content-center profilePinHeaderUserContainer" style="margin-bottom:1em;">
+                <div is="emby-itemscontainer" class="profilePinImageContainer flex flex-direction-column justify-content-center">
+                </div>
+                <h3 class="username secondaryText" style="margin:0;"></h3>
+            </div>
+            <h2 class="secondaryText" style="margin-top: 0; font-weight: inherit;">${ProfilePinIsOn}</h2>
+            <h1 class="mainHeader">${EnterYourPinToContinue}</h1>
+            <h1 class="invalidHeader hide errorColor">${WrongPinPleaseTryAgain}</h1>
+
+            <div class="inputContainer flex flex-direction-row profilePinPromptInputContainer buttonItems focuscontainer-x">
+                <input is="emby-input" type="number" class="txtProfilePinInput buttonItems-item emby-input-text-security emby-input-hide-spin-button" label="" required="required" min="0" max="9" size="1" step="1" autocomplete="off" inputmode="numeric" />
+                <input is="emby-input" type="number" class="txtProfilePinInput buttonItems-item emby-input-text-security emby-input-hide-spin-button" label="" required="required" min="0" max="9" size="1" step="1" autocomplete="off" inputmode="numeric" />
+                <input is="emby-input" type="number" class="txtProfilePinInput buttonItems-item emby-input-text-security emby-input-hide-spin-button" label="" required="required" min="0" max="9" size="1" step="1" autocomplete="off" inputmode="numeric" />
+                <input is="emby-input" type="number" class="txtProfilePinInput buttonItems-item emby-input-text-security emby-input-hide-spin-button" label="" required="required" min="0" max="9" size="1" step="1" autocomplete="off" inputmode="numeric" />
+            </div>
+
+            <h2 class="pinMustBe warningColor" style="font-weight:500;"></h2>
+
+            <div class="alphaPicker align-items-center hide pinPromptKeypad" style="margin: 1em 0;font-size:120%;"></div>
+
+            <div class="flex flex-direction-row justify-content-center fieldItems">
+                <h3 class="secondaryText"><a href="#" is="emby-linkbutton" class="button-link button-link-color-inherit btnCloseWithResult fieldItems-item" data-result="forgotpin">${ForgotPin}</a></h3>
+                <h3 class="secondaryText"><a href="#" is="emby-linkbutton" class="button-link button-link-color-inherit btnCloseWithResult fieldItems-item" data-result="changeuser">${HeaderChangeUser}</a></h3>
+            </div>
+        </form>
+    </div>
+</div>

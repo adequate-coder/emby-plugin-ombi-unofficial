@@ -1,0 +1,15 @@
+{
+    "MediaType": "Typ m\u00e9dia",
+    "ExternalPlayers": "Extern\u00ed p\u0159ehr\u00e1va\u010de",
+    "ExternalPlayer": "Extern\u00ed p\u0159ehr\u00e1va\u010d",
+    "PlayerPath": "Um\u00edst\u011bn\u00ed p\u0159ehr\u00e1va\u010de",
+    "ArgumentsHelp": "Zadejte ka\u017ed\u00fd parametr na novou \u0159\u00e1dku.",
+    "TokenPath": "{path} = cesta k souboru",
+    "EnableFor": "Povolit pro:",
+    "VideoFiles": "Video soubory",
+    "InternetStreams": "Internetov\u00e9 streamy",
+    "CommandLineArguments": "Parametry v p\u0159\u00edkazov\u00e9 \u0159\u00e1dce",
+    "TokenStartPosMs": "{ms} = za\u010d\u00e1tek v ms",
+    "TokenStartPosSeconds": "{Seconds} = po\u010d\u00e1te\u010dn\u00ed pozice ve vte\u0159in\u00e1ch",
+    "AdditionalFilters": "P\u0159\u00eddavn\u00e9 filtry:"
+}

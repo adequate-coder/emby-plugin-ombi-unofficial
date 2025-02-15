@@ -1,0 +1,172 @@
+<div is="emby-scroller" class="view flex flex-direction-column scrollFrameY flex-grow" data-mousewheel="true" data-horizontal="false" data-forcescrollbar="true" data-focusscroll="true" data-bindheader="true">
+    <div class="scrollSlider flex-grow flex-direction-column padded-left padded-left-page padded-right padded-top-page padded-bottom-page settingsContainer">
+        <form class="auto-center">
+
+            <fieldset class="videoQualitySection">
+                <legend>
+                    ${Video}
+                </legend>
+                <div class="selectContainer fldVideoInNetworkQuality hide">
+                    <select is="emby-select" class="selectVideoInNetworkQuality autoSetting autoSave" label="${LabelHomeNetworkQuality}" data-settingmethod="selectVideoInNetworkQuality" data-settingowner="appsettings"></select>
+                </div>
+                <div class="selectContainer fldVideoInternetQuality hide">
+                    <select is="emby-select" class="selectVideoInternetQuality autoSetting autoSave" label="${LabelInternetQuality}" data-settingmethod="selectVideoInternetQuality" data-settingowner="appsettings"></select>
+                </div>
+                <div class="selectContainer fldChromecastQuality hide">
+                    <select is="emby-select" class="selectChromecastVideoQuality autoSetting autoSave" label="${LabelMaxChromecastBitrate}" data-settingmethod="maxChromecastBitrate" data-settingowner="appsettings"></select>
+                </div>
+                <div class="selectContainer fldBackgroundVideo hide">
+                    <select is="emby-select" class="selectBackgroundVideo autoSetting autoSave" label="${LabelBackgroundVideoPlayback}" data-settingmethod="backgroundVideo" data-settingowner="appsettings">
+                        <option value="on">${AlwaysOn}</option>
+                        <option value="external">${HeadphonesOrExternalSpeakersConnected}</option>
+                        <option value="">${Off}</option>
+                    </select>
+                    <div class="fieldDescription">${BackgroundVideoPlaybackHelp}</div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>
+                    ${Audio}
+                </legend>
+                <div class="selectContainer">
+                    <select is="emby-select" class="selectAudioLanguage autoSetting autoSave" data-refreshitemsonchange="true" data-reordering="true" data-joindelimiter="," multiple label="${LabelAudioLanguagePreference}" data-settingfield="AudioLanguagePreference" data-settingowner="userconfiguration"></select>
+                </div>
+                <label class="checkboxContainer">
+                    <input type="checkbox" is="emby-checkbox" class="chkPlayDefaultAudioTrack autoSetting autoSave" data-settingfield="PlayDefaultAudioTrack" data-settingowner="userconfiguration" />
+                    <span>${LabelPlayDefaultAudioTrack}</span>
+                </label>
+                <div class="checkboxContainer checkboxContainer-withDescription">
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="chkRememberAudioTracks autoSetting autoSave" data-settingfield="RememberAudioSelections" data-settingowner="userconfiguration" />
+                        <span>${RememberSelectedAudioTracks}</span>
+                    </label>
+                    <div class="fieldDescription checkboxFieldDescription">${RememberSelectedAudioTracksHelp}</div>
+
+                    <div class="fieldDescription checkboxFieldDescription fldClearTrackSelections">
+                        <button is="emby-button" type="button" class="button-link btnClearTrackSelections" data-mode="audio">
+                            <i class="md-icon button-icon button-icon-left">&#xe0b8;</i>
+                            <span>${ClearSavedTrackSelections}</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="selectContainer musicQualitySection hide">
+                    <select is="emby-select" class="selectMusicInternetQuality autoSetting autoSave" label="${LabelInternetQuality}" data-settingmethod="selectMusicInternetQuality" data-settingowner="appsettings"></select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>
+                    ${Advanced}
+                </legend>
+                <div class="checkboxContainer checkboxContainer-withDescription fldEnableResolutionSwitch hide">
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="chkEnableResolutionSwitch autoSetting autoSave" data-settingmethod="enableResolutionSwitching" data-settingowner="appsettings" />
+                        <span>${EnableResolutionSwitching}</span>
+                    </label>
+                    <div class="fieldDescription checkboxFieldDescription">${EnableResolutionSwitchingHelp}</div>
+                </div>
+                <div class="checkboxContainer checkboxContainer-withDescription fldEnableRefreshRate hide">
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="chkEnableRefreshRate autoSetting autoSave" data-settingmethod="enableRefreshRateSwitching" data-settingowner="appsettings" />
+                        <span>${EnableDisplayRefreshRateSwitching}</span>
+                    </label>
+                    <div class="fieldDescription checkboxFieldDescription">${EnableDisplayRefreshRateSwitchingHelp}</div>
+                </div>
+                <div class="checkboxContainer checkboxContainer-withDescription cinemaModeOptions">
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="chkEnableCinemaMode autoSetting autoSave" data-settingmethod="enableCinemaMode" data-settingowner="usersettings" />
+                        <span>${EnableCinemaMode}</span>
+                    </label>
+                    <div class="fieldDescription checkboxFieldDescription">${CinemaModeConfigurationHelp}</div>
+                </div>
+                <div class="checkboxContainer fldEpisodeAutoPlay hide">
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="chkEpisodeAutoPlay autoSetting autoSave" data-settingfield="EnableNextEpisodeAutoPlay" data-settingowner="userconfiguration" />
+                        <span>${PlayNextEpisodeAutomatically}</span>
+                    </label>
+                </div>
+                <div class="checkboxContainer checkboxContainer-withDescription fldEnableNextVideoOverlay hide">
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="chkEnableNextVideoOverlay autoSetting autoSave" data-settingmethod="enableNextVideoInfoOverlay" data-settingowner="usersettings" />
+                        <span>${ShowUpNextPreview}</span>
+                    </label>
+                    <div class="fieldDescription checkboxFieldDescription">${ShowUpNextPreviewHelp}</div>
+                </div>
+
+                <div class="checkboxContainer fldExternalPlayer checkboxContainer-withDescription hide">
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="chkExternalVideoPlayer autoSetting autoSave" data-settingmethod="enableSystemExternalPlayers" data-settingowner="appsettings" />
+                        <span>${EnableExternalVideoPlayers}</span>
+                    </label>
+                    <div class="fieldDescription checkboxFieldDescription">
+                        <div class="labelNativeExternalPlayers">${EnableExternalVideoPlayersHelp}</div>
+                    </div>
+                </div>
+
+                <div class="selectContainer fldVideoUnderUI">
+                    <select is="emby-select" class="selectVideoUnderUI autoSetting autoSave" label="${LabelVideoBackBehavior}" data-settingmethod="enableVideoUnderUI" data-settingowner="usersettings" data-triggerchange="true">
+                        <option value="stop">${Stop}</option>
+                        <option value="play">${KeepPlayingInBackground}</option>
+                    </select>
+                </div>
+
+                <div class="selectContainer fldHideMediaTransport hide">
+                    <select is="emby-select" class="selectHideMediaTransport autoSetting autoSave" label="${LabelHideMediaTransportButtons}" data-settingmethod="hideMediaTransportButtons" data-settingowner="usersettings">
+                        <option value="auto">${Auto}</option>
+                        <option value="true">${Yes}</option>
+                        <option value="false">${No}</option>
+                    </select>
+                    <div class="fieldDescription">${HideMediaTransportButtonsHelp}</div>
+                </div>
+
+                <div class="selectContainer">
+                    <select is="emby-select" class="selectSkipForwardLength autoSetting autoSave" label="${LabelSkipForwardLength}" data-settingmethod="skipForwardLength" data-settingowner="usersettings"></select>
+                </div>
+
+                <div class="selectContainer">
+                    <select is="emby-select" class="selectSkipBackLength autoSetting autoSave" label="${LabelSkipBackLength}" data-settingmethod="skipBackLength" data-settingowner="usersettings"></select>
+                </div>
+
+                <div class="selectContainer fldResumeRewind">
+                    <select is="emby-select" class="selectResumeRewind autoSetting autoSave" label="${LabelResumeRewindSeconds}" data-settingfield="ResumeRewindSeconds" data-settingowner="userconfiguration">
+                    </select>
+                    <div class="fieldDescription">${ResumeRewindSecondsHelp}</div>
+                </div>
+
+                <div class="selectContainer fldIntroSkip">
+                    <select is="emby-select" class="selectIntroSkip autoSetting autoSave" label="${LabelIntroSkipMode}" data-settingfield="IntroSkipMode" data-settingowner="userconfiguration">
+                        <option value="None">${Off}</option>
+                        <option value="ShowButton">${ShowSkipIntroButton}</option>
+                        <option value="AutoSkip">${AutoSkipIntro}</option>
+                    </select>
+                    <div class="fieldDescription">${IntroSkipModeHelp}</div>
+                </div>
+
+                <div class="checkboxContainer checkboxContainer-withDescription">
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="chkStillWatching autoSetting autoSave" data-settingmethod="enableStillWatching" data-settingowner="usersettings" />
+                        <span>${PromptStillWatching}</span>
+                    </label>
+                    <div class="fieldDescription checkboxFieldDescription">${PreventPlaybackContinuing}</div>
+                </div>
+
+                <div class="selectContainer fldOrientationLock hide">
+                    <select is="emby-select" class="selectOrientationLock autoSetting autoSave" label="${LabelScreenOrientationDuringVideo}" data-settingmethod="videoOrientation" data-settingowner="usersettings">
+                        <option value="auto">${Auto}</option>
+                        <option value="landscape">${LockToLandscape}</option>
+                        <option value="device">${UseDeviceSetting}</option>
+                    </select>
+                </div>
+
+                <div class="checkboxContainer checkboxContainer-withDescription">
+                    <label>
+                        <input type="checkbox" is="emby-checkbox" class="chkRatingOnPlaybackStart autoSetting autoSave" data-settingmethod="enableRatingInfoOnPlaybackStart" data-settingowner="usersettings" />
+                        <span>${DisplayRatingInformationOnVideoPlaybackStart}</span>
+                    </label>
+                    <div class="fieldDescription checkboxFieldDescription">${DisplayRatingInformationOnVideoPlaybackStartHelp}</div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

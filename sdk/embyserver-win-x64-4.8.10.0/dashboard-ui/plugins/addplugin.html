@@ -1,0 +1,91 @@
+﻿<div is="emby-scroller" class="view flex flex-direction-column scrollFrameY flex-grow" data-mousewheel="true" data-horizontal="false" data-forcescrollbar="true" data-focusscroll="true" data-bindheader="true">
+    <div class="scrollSlider flex-grow flex-direction-column padded-left padded-left-page padded-right padded-top-page padded-bottom-page settingsContainer">
+        <div class="readOnlyContent auto-center">
+
+            <div>
+
+                <div class="verticalSection">
+                    <div class="sectionTitleContainer flex align-items-center">
+                        <h1 class="sectionTitle pluginName"></h1>
+                    </div>
+
+                    <p class="tagline" style="font-style: italic;"></p>
+                    <p class="pPreviewImage"></p>
+
+                    <p class="overview"></p>
+
+                </div>
+
+                <div class="verticalSection">
+                    <h2 class="sectionTitle">${HeaderInstall}</h2>
+
+                    <form class="addPluginForm">
+                        <p class="pCurrentVersion"></p>
+                        <div class="pSelectVersion hide selectContainer">
+                            <select class="selectVersion" name="selectVersion" is="emby-select" label="${LabelSelectVersionToInstall}"></select>
+                        </div>
+
+                        <p class="btnInstallDiv hide">
+                            <button is="emby-button" type="submit" class="btnInstall raised button-submit block">
+                                <span>${Install}</span>
+                            </button>
+                            <div class="fieldDescription">${ServerRestartNeededAfterPluginInstall}</div>
+                        </p>
+                        <p class="nonServerMsg"></p>
+                    </form>
+
+                    <div class="premiumPackage hide" style="margin-top: 1.5em;">
+                        <div>
+                            <form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                <p class="regStatus">
+                                </p>
+                                <div class="supporterDescription">
+
+                                    <p>${MessagePluginRequiresSubscription}</p>
+
+                                    <p><a is="emby-linkbutton" class="button-link" href="https://emby.media/premiere" target="_blank">${LinkLearnMoreAboutSubscription}</a></p>
+
+                                </div>
+                                <div class="premiumDescription">
+
+                                    <p>${MessagePremiumPluginRequiresMembership}</p>
+
+                                    <p><a is="emby-linkbutton" class="button-link" href="https://emby.media/premiere" target="_blank">${LinkLearnMoreAboutSubscription}</a></p>
+                                </div>
+                                <div class="premiumHasPrice hide">
+                                    <p class="regPrice">
+                                    </p>
+                                    <input type="hidden" name="cmd" value="_xclick">
+                                    <input type="hidden" class="payPalEmail" name="business" value="mb_1358534950_biz@reedsplace.com">
+                                    <input type="hidden" name="currency_code" value="USD">
+                                    <input type="hidden" class="featureName" name="item_name" value="">
+                                    <input type="hidden" class="amount" name="amount" value="10">
+                                    <input type="hidden" class="featureId" name="item_number" value="">
+                                    <input type="hidden" name="notify_url" value="https://mb3admin.com/admin/service/services/ppipn.php">
+                                    <input type="hidden" name="return" class="paypalReturnUrl" value="#">
+                                    <button is="emby-button" type="submit" class="ppButton raised block button-submit" style="background-color: #179BD7;color:#fff;">
+                                        <span>${RegisterWithPayPal}</span>
+                                    </button>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="verticalSection">
+                <h2 class="sectionTitle">${HeaderDeveloperInfo}</h2>
+                <div class="sectionContent">
+                    <p class="developer"></p>
+                    <p class="pViewWebsite hide">
+                        <a is="emby-linkbutton" class="button-link" href="#" target="_blank">${ButtonViewWebsite}</a>
+                    </p>
+                </div>
+
+                <h2>${HeaderRevisionHistory}</h2>
+                <div class="revisionHistory vertical-list" is="emby-itemscontainer"></div>
+            </div>
+        </div>
+    </div>
+</div>

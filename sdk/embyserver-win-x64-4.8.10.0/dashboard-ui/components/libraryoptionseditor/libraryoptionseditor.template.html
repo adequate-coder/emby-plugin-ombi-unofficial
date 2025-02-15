@@ -1,0 +1,359 @@
+﻿<style>
+    .advancedHide {
+        display: none !important;
+    }
+</style>
+
+
+<div class="musicFolderStructureSection hide">
+    <div class="selectContainer">
+        <select is="emby-select" class="selectMusicFolderStructure" label="${LabelMusicFolderStructure}">
+            <option value="">${OtherOrUnstructured}</option>
+            <option class="selectMusicFolderStructure_artist_album_track" value="artist_album_track">${PerfectArtistAlbumTrack}</option>
+            <option class="selectMusicFolderStructure_album_track" value="album_track">${PerfectAlbumTrack}</option>
+        </select>
+        <div class="fieldDescription">${LabelMusicFolderStructureHelp}</div>
+    </div>
+</div>
+
+<h2>${HeaderLibrarySettings}</h2>
+<div class="verticalSection verticalSection-extrabottompadding">
+    <div class="selectContainer fldMetadataLanguage hide">
+        <select is="emby-select" class="selectLanguage" label="${LabelMetadataDownloadLanguage}"></select>
+    </div>
+    <div class="selectContainer fldMetadataCountry hide">
+        <select is="emby-select" class="selectCountry" label="${LabelCertificationCountry}"></select>
+        <div class="fieldDescription">${CertificationCountryHelp}</div>
+    </div>
+    <div class="selectContainer fldImageLanguage hide">
+        <select is="emby-select" class="selectImageLanguage" label="${LabelImageDownloadLanguage}"></select>
+    </div>
+    <div class="checkboxContainer checkboxContainer-withDescription chkEnablePhotosContainer">
+        <label>
+            <input type="checkbox" is="emby-checkbox" class="chkEnablePhotos" checked />
+            <span>${EnablePhotos}</span>
+        </label>
+        <div class="fieldDescription checkboxFieldDescription">${EnablePhotosHelp}</div>
+    </div>
+    <div class="inputContainer fldIgnoreSample hide">
+        <div class="flex align-items-center">
+            <div class="flex-grow">
+                <input is="emby-input" type="number" class="txtIgnoreSampleFiles flex-grow" name="txtIgnoreSampleFiles" inputmode="numeric" min="0" value="300" label="${LabelIgnoreSampleFiles}" />
+            </div>
+            <div class="align-self-flex-end" style="margin-inline-start:.35em;margin-bottom: .25em;">MB</div>
+        </div>
+    </div>
+    <div class="checkboxContainer checkboxContainer-withDescription fldImportPlaylists">
+        <label>
+            <input type="checkbox" is="emby-checkbox" class="chkImportPlaylists" checked />
+            <span>${ImportPlaylists}</span>
+        </label>
+        <div class="fieldDescription checkboxFieldDescription">${ImportPlaylistsHelp}</div>
+    </div>
+
+    <div class="checkboxContainer checkboxContainer-withDescription chkEnableEmbeddedTitlesContainer hide advanced">
+        <label>
+            <input is="emby-checkbox" type="checkbox" class="chkEnableEmbeddedTitles" />
+            <span>${PreferEmbeddedTitlesOverFileNames}</span>
+        </label>
+        <div class="fieldDescription checkboxFieldDescription">${PreferEmbeddedTitlesOverFileNamesHelp}</div>
+    </div>
+
+    <div class="checkboxContainer checkboxContainer-withDescription fldRealtimeMonitor hide">
+        <label>
+            <input type="checkbox" is="emby-checkbox" class="chkEnableRealtimeMonitor" checked />
+            <span>${LabelEnableRealtimeMonitor}</span>
+        </label>
+        <div class="fieldDescription checkboxFieldDescription">${LabelEnableRealtimeMonitorHelp}</div>
+    </div>
+
+    <div class="checkboxContainer checkboxContainer-withDescription hide">
+        <label>
+            <input type="checkbox" is="emby-checkbox" class="chkEnableAudioResume" />
+            <span>${LabelEnableRealtimeMonitor}</span>
+        </label>
+    </div>
+</div>
+
+<div class="metadataReaders hide verticalSection verticalSection-extrabottompadding">
+    <div class="sectionTitleContainer">
+        <h2 class="sectionTitle">
+            ${HeaderMetadataReaders}
+        </h2>
+    </div>
+    <p class="secondaryText" style="margin:.5em 0;">${LabelMetadataReadersHelp}</p>
+    <div class="itemsContainer metadataReaderItemsContainer" is="emby-itemscontainer">
+
+    </div>
+</div>
+
+<div class="metadataFetchers hide verticalSection verticalSection-extrabottompadding">
+</div>
+
+<div class="importCollectionsSection verticalSection verticalSection-extrabottompadding">
+    <div class="checkboxContainer checkboxContainer-withDescription fldImportCollections hide">
+        <label>
+            <input type="checkbox" is="emby-checkbox" class="chkImportCollections" />
+            <span>${LabelImportCollections}</span>
+        </label>
+        <div class="fieldDescription checkboxFieldDescription">${LabelImportCollectionsHelp}</div>
+    </div>
+
+    <div class="selectContainer fldMinCollectionSize hide">
+        <select is="emby-select" class="selectMinCollectionSize" label="${LabelMinCollectionSize}">
+            <option value="1">1</option>
+            <option value="2" selected>2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <div class="fieldDescription">${MinCollectionSizeHelp}</div>
+    </div>
+</div>
+
+<div class="verticalSection verticalSection-extrabottompadding">
+    <div class="checkboxContainer checkboxContainer-withDescription fldAdult hide">
+        <label>
+            <input type="checkbox" is="emby-checkbox" class="chkAdult" />
+            <span>${LabelAllowAdultMetadata}</span>
+        </label>
+        <div class="fieldDescription checkboxFieldDescription">${LabelAllowAdultMetadataHelp}</div>
+    </div>
+
+    <div class="selectContainer fldAutoRefreshInterval hide" style="margin: 2em 0;">
+        <select is="emby-select" class="selectAutoRefreshInterval" label="${LabelAutomaticallyRefreshInternetMetadataEvery}"></select>
+        <div class="fieldDescription">${MessageEnablingOptionLongerScans}</div>
+    </div>
+    <div class="selectContainer fldPlaceholderMetadataRefreshInterval hide" style="margin: 2em 0;">
+        <select is="emby-select" class="selectPlaceholderMetadataRefreshInterval" label="${LabelPlaceholderMetadataRefreshInternetMetadataEvery}"></select>
+        <div class="fieldDescription">${MessageEnablingOptionLongerScans}</div>
+    </div>
+</div>
+
+<div class="metadataSavers hide verticalSection verticalSection-extrabottompadding">
+</div>
+<div class="imageFetchers hide verticalSection verticalSection-extrabottompadding">
+</div>
+
+<div class="verticalSection verticalSection-extrabottompadding">
+    <div class="checkboxContainer checkboxContainer-withDescription chkSaveLocalContainer hide">
+        <label>
+            <input is="emby-checkbox" type="checkbox" class="chkSaveLocal" />
+            <span>${LabelSaveLocalMetadata}</span>
+        </label>
+        <div class="fieldDescription checkboxFieldDescription">${LabelSaveLocalMetadataHelp}</div>
+    </div>
+    <div class="checkboxContainer checkboxContainer-withDescription fldCacheImages hide">
+        <label>
+            <input is="emby-checkbox" type="checkbox" class="chkCacheImages" />
+            <span>${CacheImagesInServerData}</span>
+        </label>
+        <div class="fieldDescription checkboxFieldDescription">${CacheImagesInServerDataHelp}</div>
+    </div>
+
+    <div class="checkboxContainer checkboxContainer-withDescription fldSaveMetadataHidden hide advanced">
+        <label>
+            <input type="checkbox" is="emby-checkbox" class="chkSaveMetadataHidden" />
+            <span>${OptionSaveMetadataAsHidden}</span>
+        </label>
+        <div class="fieldDescription checkboxFieldDescription">${OptionSaveMetadataAsHiddenHelp}</div>
+    </div>
+
+    <div class="checkboxContainer checkboxContainer-withDescription hide chkDownloadImagesInAdvanceContainer advanced">
+        <label>
+            <input is="emby-checkbox" type="checkbox" class="chkDownloadImagesInAdvance" />
+            <span>${OptionDownloadImagesInAdvance}</span>
+        </label>
+        <div class="fieldDescription checkboxFieldDescription">${OptionDownloadImagesInAdvanceHelp}</div>
+    </div>
+
+    <div class="checkboxContainer checkboxContainer-withDescription chkAutomaticallyGroupSeriesContainer hide">
+        <label>
+            <input type="checkbox" is="emby-checkbox" class="chkAutomaticallyGroupSeries" checked />
+            <span>${OptionAutomaticallyGroupSeries}</span>
+        </label>
+        <div class="fieldDescription checkboxFieldDescription">${OptionAutomaticallyGroupSeriesHelp}</div>
+    </div>
+
+    <div class="checkboxContainer checkboxContainer-withDescription hide chkImportMissingEpisodesContainer advanced">
+        <label>
+            <input is="emby-checkbox" type="checkbox" class="chkImportMissingEpisodes" />
+            <span>${LabelDisplayMissingEpisodesWithinSeasons}</span>
+        </label>
+        <div class="fieldDescription checkboxFieldDescription">${ImportMissingEpisodesHelp}</div>
+    </div>
+</div>
+
+<div class="thumbnailSettingsSection hide verticalSection verticalSection-extrabottompadding">
+    <h2>${HeaderVideoPreviewThumbnails}</h2>
+    <div class="selectContainer">
+        <select is="emby-select" class="selectThumbnailImages" label="${LabelGenerateVideoPreviewThumbnails}">
+            <option value="">${Never}</option>
+            <option value="task">${AsAScheduledTask}</option>
+            <option value="scanandtask">${AsAScheduledTaskAndMediaAdded}</option>
+        </select>
+        <div class="fieldDescription">${GenerateVideoPreviewThumbnailsHelp}</div>
+    </div>
+
+    <div class="selectContainer fldThumbnailInterval hide">
+        <label>
+            <select is="emby-select" class="selectThumbnailInterval" label="${LabelThumbnailImagesInterval}"></select>
+        </label>
+        <div class="fieldDescription">${ThumbnailImagesIntervalHelp}</div>
+    </div>
+
+    <div class="checkboxContainer checkboxContainer-withDescription fldSaveThumbnailSetsLocally hide">
+        <label>
+            <input type="checkbox" is="emby-checkbox" class="chkLocalThumbnailSets" />
+            <span>${SaveThumbnailImagesIntoMediaFolders}</span>
+        </label>
+    </div>
+</div>
+
+<div class="introDetectionSection hide verticalSection verticalSection-extrabottompadding">
+    <h2>${Markers}</h2>
+    <div class="selectContainer">
+        <select is="emby-select" class="selectIntroDetection" label="${LabelGenerateIntroVideoMarkers}">
+            <option value="">${Never}</option>
+            <option value="task">${AsAScheduledTask}</option>
+            <option value="scanandtask">${AsAScheduledTaskAndMediaAdded}</option>
+        </select>
+        <div class="fieldDescription">${GenerateIntroVideoMarkersHelp}</div>
+    </div>
+</div>
+
+<div class="subtitleDownloadSettings hide">
+    <h2>${HeaderSubtitleDownloads}</h2>
+
+    <div class="verticalSection verticalSection-extrabottompadding" style="margin-bottom:2em;">
+        <div class="selectContainer">
+            <label>
+                <select is="emby-select" class="selectSubtitleLanguages" label="${HeaderDownloadLanguages}" data-autoallany="false" data-empty-is-all="false" multiple></select>
+            </label>
+        </div>
+    </div>
+
+    <div class="verticalSection verticalSection-extrabottompadding" style="margin-bottom:2em;">
+        <div class="sectionTitleContainer">
+            <h3 class="sectionTitle">
+                ${HeaderSubtitleDownloaders}
+            </h3>
+        </div>
+        <p class="secondaryText" style="margin:.5em 0;">${SubtitleDownloadersHelp}</p>
+        <div class="itemsContainer subtitleFetchersItemsContainer" is="emby-itemscontainer">
+
+        </div>
+    </div>
+
+    <div class="verticalSection verticalSection-extrabottompadding">
+        <div class="checkboxContainer checkboxContainer-withDescription">
+            <label>
+                <input is="emby-checkbox" type="checkbox" class="chkRequireHashMatch" checked />
+                <span>${RequireHashMatch}</span>
+            </label>
+            <div class="fieldDescription checkboxFieldDescription">${RequireHashMatchHelp}</div>
+        </div>
+
+        <div class="checkboxContainer checkboxContainer-withDescription">
+            <label>
+                <input is="emby-checkbox" type="checkbox" class="chkForcedSubtitlesOnly" checked />
+                <span>${SearchForForcedSubtitlesOnly}</span>
+            </label>
+            <div class="fieldDescription checkboxFieldDescription">${SearchForForcedSubtitlesOnlyHelp}</div>
+        </div>
+
+        <div class="selectContainer fldSubtitleDownloadMaxAge">
+            <label>
+                <select is="emby-select" class="selectSubtitleDownloadMaxAge" label="${LabelSubtitleDownloadMaxAge}"></select>
+            </label>
+            <div class="fieldDescription">${SubtitleDownloadMaxAgeHelp}</div>
+        </div>
+
+        <div class="checkboxContainer checkboxContainer-withDescription">
+            <label>
+                <input is="emby-checkbox" type="checkbox" class="chkSkipIfAudioTrackPresent" />
+                <span>${LabelSkipIfAudioTrackPresent}</span>
+            </label>
+            <div class="fieldDescription checkboxFieldDescription">${LabelSkipIfAudioTrackPresentHelp}</div>
+        </div>
+        <div class="checkboxContainer checkboxContainer-withDescription">
+            <label>
+                <input is="emby-checkbox" type="checkbox" class="chkSkipIfGraphicalSubsPresent" />
+                <span>${LabelSkipIfGraphicalSubsPresent}</span>
+            </label>
+            <div class="fieldDescription checkboxFieldDescription">${LabelSkipIfGraphicalSubsPresentHelp}</div>
+        </div>
+
+        <div class="checkboxContainer checkboxContainer-withDescription">
+            <label>
+                <input type="checkbox" is="emby-checkbox" class="chkSaveSubtitlesLocally" checked />
+                <span>${SaveSubtitlesIntoMediaFolders}</span>
+            </label>
+            <div class="fieldDescription checkboxFieldDescription">${SaveSubtitlesIntoMediaFoldersHelp}</div>
+        </div>
+    </div>
+</div>
+
+<div class="lyricsDownloadSettings hide">
+    <h2>${Lyrics}</h2>
+
+    <div class="verticalSection verticalSection-extrabottompadding" style="margin-bottom:2em;">
+        <div class="selectContainer">
+            <label>
+                <select is="emby-select" class="selectLyricsLanguages" label="${HeaderDownloadLanguages}" data-autoallany="false" data-empty-is-all="false" multiple></select>
+            </label>
+        </div>
+    </div>
+
+    <div class="verticalSection verticalSection-extrabottompadding" style="margin-bottom:2em;">
+        <div class="sectionTitleContainer">
+            <h3 class="sectionTitle">
+                ${HeaderSubtitleDownloaders}
+            </h3>
+        </div>
+        <p class="secondaryText" style="margin:.5em 0;">${SubtitleDownloadersHelp}</p>
+        <div class="itemsContainer lyricsFetchersItemsContainer" is="emby-itemscontainer">
+
+        </div>
+    </div>
+
+    <div class="verticalSection verticalSection-extrabottompadding">
+        <div class="selectContainer fldLyricsDownloadMaxAge">
+            <label>
+                <select is="emby-select" class="selectLyricsDownloadMaxAge" label="${LabelLyricsDownloadMaxAge}"></select>
+            </label>
+            <div class="fieldDescription">${LyricsDownloadMaxAgeHelp}</div>
+        </div>
+
+        <div class="checkboxContainer checkboxContainer-withDescription">
+            <label>
+                <input type="checkbox" is="emby-checkbox" class="chkSaveLyricsLocally" checked />
+                <span>${SaveLyricsIntoMediaFolders}</span>
+            </label>
+            <div class="fieldDescription checkboxFieldDescription">${SaveLyricsIntoMediaFoldersHelp}</div>
+        </div>
+    </div>
+</div>
+
+<div class="playbackSettings hide verticalSection verticalSection-extrabottompadding">
+
+    <h2>${Playback}</h2>
+
+    <div class="inputContainer">
+        <input is="emby-input" type="number" class="txtMinResumePct" name="txtMinResumePct" inputmode="numeric" required min="0" max="100" label="${LabelMinResumePercentage}" value="3" />
+        <div class="fieldDescription">
+            ${LabelMinResumePercentageHelp}
+        </div>
+    </div>
+    <div class="inputContainer">
+        <input is="emby-input" type="number" class="txtMaxResumePct" name="txtMaxResumePct" inputmode="numeric" required min="1" max="100" label="${LabelMaxResumePercentage}" value="90" />
+        <div class="fieldDescription">
+            ${LabelMaxResumePercentageHelp}
+        </div>
+    </div>
+    <div class="inputContainer">
+        <input is="emby-input" type="number" class="txtMinResumeDuration" name="txtMinResumeDuration" inputmode="numeric" required min="0" label="${LabelMinResumeDuration}" value="120" />
+        <div class="fieldDescription">
+            ${LabelMinResumeDurationHelp}
+        </div>
+    </div>
+</div>

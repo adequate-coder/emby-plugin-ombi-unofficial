@@ -1,0 +1,9 @@
+{
+  "themeColor": "#141414",
+  "androidStatusBarForegroundColor": "light",
+  "androidNavigationBarForegroundColor": "light",
+  "preferredLogoImageTypes": [ "LogoLightColor", "LogoLight", "Logo" ],
+  "systemTheme": "dark",
+  "titleBarBackgroundColor": "#001935",
+  "titleBarTextColor": "#dddddd"
+}

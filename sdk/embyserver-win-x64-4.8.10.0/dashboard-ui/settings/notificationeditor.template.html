@@ -1,0 +1,45 @@
+<div class="formDialogHeader">
+    <button type="button" is="emby-dialogclosebutton"></button>
+    <h3 class="formDialogHeaderTitle"></h3>
+</div>
+
+<div is="emby-scroller" data-horizontal="false" data-focusscroll="true" class="formDialogContent">
+    <div class="scrollSlider">
+        <form class="dialogContentInner dialog-content-centered padded-left padded-right padded-bottom-page">
+
+            <div class="entryFormElements">
+
+            </div>
+
+            <div class="flex flex-wrap-wrap" style="margin:1em 0">
+                <button is="emby-button" type="button" class="raised btnSendTest raised flex-grow justify-content-center">
+                    <i class="md-icon button-icon button-icon-left">send</i>
+                    <span>${SendTestNotification}</span>
+                </button>
+            </div>
+
+            <div class="verticalSection" style="margin:2em 0;">
+                <h3 class="checkboxListLabel">${Events}</h3>
+                <div class="checkboxList eventList"></div>
+            </div>
+
+            <div class="selectContainer fldSelectUser hide" style="margin-top:1em;">
+                <select is="emby-select" class="selectUser" label="${LimitUserEventsTo}" multiple></select>
+            </div>
+
+            <div class="selectContainer" style="margin-top:1em;">
+                <select is="emby-select" class="selectLibrary" label="${LimitLibraryEventsTo}" multiple></select>
+            </div>
+
+            <div class="selectContainer fldDevices hide" style="margin-top:1em;">
+                <select is="emby-select" class="selectDevices" label="${LimitDeviceEventsTo}" multiple></select>
+            </div>
+
+            <div class="formDialogFooter">
+                <button is="emby-button" type="submit" class="raised btnSubmit block formDialogFooterItem button-submit">
+                    ${Save}
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

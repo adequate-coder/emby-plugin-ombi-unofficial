@@ -1,0 +1,132 @@
+<div class="view flex flex-direction-column withTabs">
+
+    <div class="unlockContainer hide padded-left padded-left-page padded-right padded-top padded-top-page padded-bottom padded-bottom-page">
+
+        <div class="padded-left padded-right">
+            <p class="unlockText" style="text-align:center;margin-top:0;"></p>
+
+            <button is="emby-button" type="button" class="raised button-submit block btnUnlock">
+                <span class="btnUnlockText">${HeaderBecomeProjectSupporter}</span>
+            </button>
+        </div>
+    </div>
+
+    <div data-index="0" is="emby-scroller" data-horizontal="false" data-focusscroll="true" data-navcommands="card" data-forcescrollbar="true" class="scrollFrameY flex flex-grow tabContent tabContent-positioned" data-bindheader="true">
+
+        <div class="scrollSlider flex-grow padded-top-page">
+            <div class="activePrograms hide verticalSection verticalSection-cards">
+                <div class="sectionTitleContainer sectionTitleContainer-cards padded-left padded-left-page padded-right focusable focuscontainer-x" data-focusabletype="nearest">
+                    <a href="#" data-href="list/list.html?type=OnNow" is="emby-sectiontitle" class="noautofocus button-link button-link-color-inherit sectionTitleTextButton sectionTitleTextButton-more">
+                        <h2 class="sectionTitle sectionTitle-cards">${HeaderOnNow}</h2>
+                    </a>
+                </div>
+                <div is="emby-scroller" data-mousewheel="false" data-focusscroll="true" class="padded-top-focusscale padded-bottom-focusscale padded-left padded-left-page padded-right">
+                    <div is="emby-itemscontainer" data-focusabletype="nearest" class="scrollSlider focusable focuscontainer-x" data-refreshinterval="300000" data-virtualscrolllayout="horizontal-grid"></div>
+                </div>
+            </div>
+            <div class="tagsSection hide verticalSection verticalSection-cards" style="margin-bottom: 1.5em;">
+                <div is="emby-scroller" data-mousewheel="false" data-focusscroll="true" class="padded-top-focusscale padded-bottom-focusscale padded-left padded-left-page padded-right">
+                    <div is="emby-itemscontainer" data-focusabletype="nearest" class="scrollSlider focusable focuscontainer-x"></div>
+                </div>
+            </div>
+            <div class="newEpisodes hide verticalSection verticalSection-cards">
+                <div class="sectionTitleContainer sectionTitleContainer-cards padded-left padded-left-page padded-right focusable" data-focusabletype="nearest">
+                    <a href="#" data-href="list/list.html?type=Program&IsSeries=true&IsNews=false&IsKids=false&IsSports=false&IsNewOrPremiere=true" is="emby-sectiontitle" class="noautofocus button-link  button-link-color-inherit sectionTitleTextButton sectionTitleTextButton-more">
+                        <h2 class="sectionTitle sectionTitle-cards">${TitleNewEpisodes}</h2>
+                    </a>
+                </div>
+                <div is="emby-scroller" data-mousewheel="false" data-focusscroll="true" class="padded-top-focusscale padded-bottom-focusscale padded-left padded-left-page padded-right">
+                    <div is="emby-itemscontainer" data-focusabletype="nearest" class="scrollSlider focusable focuscontainer-x" data-refreshinterval="300000" data-virtualscrolllayout="horizontal-grid"></div>
+                </div>
+            </div>
+            <div class="upcomingEpisodes hide verticalSection verticalSection-cards">
+                <div class="sectionTitleContainer sectionTitleContainer-cards padded-left padded-left-page padded-right focusable" data-focusabletype="nearest">
+                    <a href="#" data-href="list/list.html?type=Program&IsSeries=true&IsNews=false&IsKids=false&IsSports=false" is="emby-sectiontitle" class="noautofocus button-link  button-link-color-inherit sectionTitleTextButton sectionTitleTextButton-more">
+                        <h2 class="sectionTitle sectionTitle-cards">${Shows}</h2>
+                    </a>
+                </div>
+                <div is="emby-scroller" data-mousewheel="false" data-focusscroll="true" class="padded-top-focusscale padded-bottom-focusscale padded-left padded-left-page padded-right">
+                    <div is="emby-itemscontainer" data-focusabletype="nearest" class="scrollSlider focusable focuscontainer-x" data-refreshinterval="300000" data-virtualscrolllayout="horizontal-grid"></div>
+                </div>
+            </div>
+            <div class="upcomingTvMovies hide verticalSection verticalSection-cards">
+                <div class="sectionTitleContainer sectionTitleContainer-cards padded-left padded-left-page padded-right focusable" data-focusabletype="nearest">
+                    <a href="#" data-href="list/list.html?type=Program&IsMovie=true&IsKids=false" is="emby-sectiontitle" class="noautofocus button-link  button-link-color-inherit sectionTitleTextButton sectionTitleTextButton-more">
+                        <h2 class="sectionTitle sectionTitle-cards">${Movies}</h2>
+                    </a>
+                </div>
+                <div is="emby-scroller" data-mousewheel="false" data-focusscroll="true" class="padded-top-focusscale padded-bottom-focusscale padded-left padded-left-page padded-right">
+                    <div is="emby-itemscontainer" data-focusabletype="nearest" class="scrollSlider focusable focuscontainer-x" data-refreshinterval="300000" data-virtualscrolllayout="horizontal-grid"></div>
+                </div>
+            </div>
+            <div class="upcomingSports hide verticalSection verticalSection-cards">
+                <div class="sectionTitleContainer sectionTitleContainer-cards padded-left padded-left-page padded-right focusable" data-focusabletype="nearest">
+                    <a href="#" data-href="list/list.html?type=Program&IsSports=true" is="emby-sectiontitle" class="noautofocus button-link  button-link-color-inherit sectionTitleTextButton sectionTitleTextButton-more">
+                        <h2 class="sectionTitle sectionTitle-cards">${Sports}</h2>
+                    </a>
+                </div>
+                <div is="emby-scroller" data-mousewheel="false" data-focusscroll="true" class="padded-top-focusscale padded-bottom-focusscale padded-left padded-left-page padded-right">
+                    <div is="emby-itemscontainer" data-focusabletype="nearest" class="scrollSlider focusable focuscontainer-x" data-refreshinterval="300000" data-virtualscrolllayout="horizontal-grid"></div>
+                </div>
+            </div>
+            <div class="upcomingKids hide verticalSection verticalSection-cards">
+                <div class="sectionTitleContainer sectionTitleContainer-cards padded-left padded-left-page padded-right focusable" data-focusabletype="nearest">
+                    <a href="#" data-href="list/list.html?type=Program&IsKids=true" is="emby-sectiontitle" class="noautofocus button-link  button-link-color-inherit sectionTitleTextButton sectionTitleTextButton-more">
+                        <h2 class="sectionTitle sectionTitle-cards">${HeaderForKids}</h2>
+                    </a>
+                </div>
+                <div is="emby-scroller" data-mousewheel="false" data-focusscroll="true" class="padded-top-focusscale padded-bottom-focusscale padded-left padded-left-page padded-right">
+                    <div is="emby-itemscontainer" data-focusabletype="nearest" class="scrollSlider focusable focuscontainer-x" data-refreshinterval="300000" data-virtualscrolllayout="horizontal-grid"></div>
+                </div>
+            </div>
+            <div class="upcomingNews hide verticalSection verticalSection-cards">
+                <div class="sectionTitleContainer sectionTitleContainer-cards padded-left padded-left-page padded-right focusable" data-focusabletype="nearest">
+                    <a href="#" data-href="list/list.html?type=Program&IsNews=true" is="emby-sectiontitle" class="noautofocus button-link  button-link-color-inherit sectionTitleTextButton sectionTitleTextButton-more">
+                        <h2 class="sectionTitle sectionTitle-cards">${News}</h2>
+                    </a>
+                </div>
+                <div is="emby-scroller" data-mousewheel="false" data-focusscroll="true" class="padded-top-focusscale padded-bottom-focusscale padded-left padded-left-page padded-right">
+                    <div is="emby-itemscontainer" data-focusabletype="nearest" class="scrollSlider focusable focuscontainer-x" data-refreshinterval="300000" data-virtualscrolllayout="horizontal-grid"></div>
+                </div>
+            </div>
+            <div class="padded-bottom-page"></div>
+        </div>
+    </div>
+
+    <div class="tabContent tabContent-positioned flex flex-direction-column flex-grow padded-top-page guideContainer flex-grow padded-left padded-left-page" data-index="1" style="box-sizing:border-box;">
+
+        <div class="guideSelectedInfo flex-shrink-zero hide padded-left padded-left-page padded-right">
+        </div>
+    </div>
+
+    <div class="tabContent tabContent-positioned flex flex-grow" data-index="2" data-swapnode="itemstab">
+
+    </div>
+
+    <div class="tabContent tabContent-positioned flex flex-grow" data-index="3" data-swapnode="itemstab">
+
+    </div>
+
+    <div class="tabContent tabContent-positioned flex flex-grow" data-index="4" data-swapnode="itemstab">
+
+
+    </div>
+
+    <div data-index="5" is="emby-scroller" data-horizontal="false" data-focusscroll="true" data-navcommands="card" data-forcescrollbar="true" class="scrollFrameY flex flex-grow tabContent tabContent-positioned" data-bindheader="true">
+
+        <div class="scrollSlider flex-grow padded-top-page">
+            <div class="activeRecordings verticalSection verticalSection-cards hide">
+                <h2 class="sectionTitle sectionTitle-cards padded-left padded-left-page">${HeaderActiveRecordings}</h2>
+                <div is="emby-scroller" data-mousewheel="false" data-focusscroll="true" class="padded-top-focusscale padded-bottom-focusscale padded-left padded-left-page padded-right">
+                    <div is="emby-itemscontainer" data-focusabletype="nearest" class="itemsContainer scrollSlider focusable focuscontainer-x" data-monitor="Timers"></div>
+                </div>
+            </div>
+            <div class="upcomingRecordings padded-bottom-page">
+            </div>
+        </div>
+    </div>
+
+    <div class="tabContent tabContent-positioned flex flex-grow" data-index="6" data-swapnode="itemstab">
+
+    </div>
+</div>

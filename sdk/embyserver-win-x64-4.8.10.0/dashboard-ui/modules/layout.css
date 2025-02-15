@@ -1,0 +1,725 @@
+:root {
+    /* Need the px or it won't work inside calc expression */
+    --window-inset-top: 0px;
+    --window-inset-bottom: 0px;
+    --window-inset-left: 0px;
+    --window-inset-right: 0px;
+    --logo-object-position: left center;
+    /* this is the height of headerLeft + 1.2em padding top + 1.2em padding bottom */
+    --header-height: 5.527em;
+    /* this is here for now instead of headroom.css to ensure it is loaded in time for the js */
+    --env-inset-top: env(safe-area-inset-top);
+}
+
+/* this @supports shouldn't be necessary because browsers should ignore what they don't support, but that doesn't seem to be the case with tizen or legacy edge
+   don't use env as part of the supports check because then tizen falsely considers it supported
+*/
+@supports (height: calc(3.125em + 2 * max(3em,4em))) {
+
+    :root {
+        --header-height: calc(4.327em + max(1.2em, env(safe-area-inset-top, 0)));
+    }
+}
+
+/* need a supports here because the css vars ponyfill will just grab everything matching :root */
+@supports (color: var(--fake-var)) {
+
+    .rtl:root {
+        --logo-object-position: right center;
+    }
+
+    .withheadernowplaying:root {
+        /* add 4.8em for nowplaying size */
+        --header-height: 10.327em;
+    }
+}
+
+/* this @supports shouldn't be necessary because browsers should ignore what they don't support, but that doesn't seem to be the case with tizen or legacy edge
+   don't use env as part of the supports check because then tizen falsely considers it supported
+*/
+@supports (height: calc(3.125em + 2 * max(3em,4em))) {
+
+    .withheadernowplaying:root {
+        /* add 4.8em for nowplaying size */
+        --header-height: calc(9.127em + max(1.2em, env(safe-area-inset-top, 0)));
+    }
+}
+
+.skinHeader {
+    /* This will ensure it is on top of the main body */
+    z-index: 1;
+    display: -webkit-flex;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    box-sizing: border-box;
+    height: var(--header-height);
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    contain: strict;
+    padding-top: 1.2em;
+    padding-left: 0;
+    padding-left: env(safe-area-inset-left, 0);
+    padding-right: 0;
+    padding-right: env(safe-area-inset-right, 0);
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+@media not all and (min-width: 126em) {
+
+    .withHeaderTabs.withFullDrawer:not(.layout-tv):root {
+        /* this is header paddingTop + header paddingBottom + headerLeft height + .45em (header middle margin) + (header middle height) */
+        --header-height: 9.104em;
+    }
+
+    /* this @supports shouldn't be necessary because browsers should ignore what they don't support, but that doesn't seem to be the case with tizen or legacy edge
+   don't use env as part of the supports check because then tizen falsely considers it supported
+*/
+    @supports (height: calc(3.125em + 2 * max(3em,4em))) {
+
+        .withHeaderTabs.withFullDrawer:not(.layout-tv):root {
+            --header-height: calc(7.904em + max(1.2em, env(safe-area-inset-top, 0)));
+        }
+    }
+
+    .withheadernowplaying.withHeaderTabs.withFullDrawer:not(.layout-tv):root {
+        /* add 4.8em for nowplaying size */
+        --header-height: 13.904em;
+    }
+
+    @supports (height: calc(3.125em + 2 * max(3em,4em))) {
+
+        .withheadernowplaying.withHeaderTabs.withFullDrawer:not(.layout-tv):root {
+            /* add 4.8em for nowplaying size */
+            --header-height: calc(12.704em + max(1.2em, env(safe-area-inset-top, 0)));
+        }
+    }
+}
+
+@media not all and (min-width: 120em) {
+
+    .withHeaderTabs:not(.layout-tv):root {
+        /* this is header paddingTop + header paddingBottom + headerLeft height + .45em (header middle margin) + (header middle height) */
+        --header-height: 9.104em;
+    }
+
+    /* this @supports shouldn't be necessary because browsers should ignore what they don't support, but that doesn't seem to be the case with tizen or legacy edge
+   don't use env as part of the supports check because then tizen falsely considers it supported
+*/
+    @supports (height: calc(3.125em + 2 * max(3em,4em))) {
+
+        .withHeaderTabs:not(.layout-tv):root {
+            --header-height: calc(7.904em + max(1.2em, env(safe-area-inset-top, 0)));
+        }
+    }
+
+    .withheadernowplaying.withHeaderTabs:not(.layout-tv):root {
+        /* add 4.8em for nowplaying size */
+        --header-height: 13.904em;
+    }
+
+    @supports (height: calc(3.125em + 2 * max(3em,4em))) {
+
+        .withheadernowplaying.withHeaderTabs:not(.layout-tv):root {
+            /* add 4.8em for nowplaying size */
+            --header-height: calc(12.704em + max(1.2em, env(safe-area-inset-top, 0)));
+        }
+    }
+}
+
+@media not all and (min-width: 66em) {
+
+    .withHeaderTabs.withFullDrawer:not(.layout-tv):root, .withHeaderTabs:not(.layout-tv):root {
+        /* this is header paddingTop + header paddingBottom + headerLeft height + (header middle height) */
+        --header-height: 8.027em;
+    }
+
+    /* this @supports shouldn't be necessary because browsers should ignore what they don't support, but that doesn't seem to be the case with tizen or legacy edge
+   don't use env as part of the supports check because then tizen falsely considers it supported
+*/
+    @supports (height: calc(3.125em + 2 * max(3em,4em))) {
+
+        .withHeaderTabs.withFullDrawer:not(.layout-tv):root, .withHeaderTabs:not(.layout-tv):root {
+            --header-height: calc(6.827em + max(1.2em, env(safe-area-inset-top, 0)));
+        }
+    }
+
+    .withheadernowplaying.withHeaderTabs.withFullDrawer:not(.layout-tv):root, .withheadernowplaying.withHeaderTabs:not(.layout-tv):root {
+        /* add 4.8em for nowplaying size */
+        --header-height: 12.827em;
+    }
+
+    @supports (height: calc(3.125em + 2 * max(3em,4em))) {
+
+        .withheadernowplaying.withHeaderTabs.withFullDrawer:not(.layout-tv):root, .withheadernowplaying.withHeaderTabs:not(.layout-tv):root {
+            /* add 4.8em for nowplaying size */
+            --header-height: calc(11.627em + max(1.2em, env(safe-area-inset-top, 0)));
+        }
+    }
+}
+
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100%;
+    /* Needed to prevent a horizontal scrollbar when animating */
+    overflow-x: hidden;
+    overflow-anchor: none;
+}
+
+.noScrollY {
+    overflow-y: hidden;
+}
+
+.layout-tv {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+@media not all and (pointer: fine) {
+    html {
+        -webkit-touch-callout: none;
+        /* technically not needed because autoprefixer will handle this, but it makes it easier to develop on ios */
+        -webkit-user-select: none;
+        user-select: none;
+    }
+}
+
+/* Used on document.body to lock document level scrolling when dialogs are open */
+.withDialogOpen {
+    overflow-y: hidden !important;
+    /* Have to use this instead of none, otherwise the slideshow can't zoom */
+    touch-action: pinch-zoom !important;
+}
+
+/* Fix for android where detail screen dialogs are causing the whole screen to scroll when scrolling the dialog */
+@media not all and (pointer: fine) {
+    .withDialogOpen .view.scrollY:not(.dialog) {
+        overflow-y: hidden !important;
+        /* Have to use this instead of none, otherwise the slideshow can't zoom */
+        touch-action: pinch-zoom !important;
+    }
+}
+
+.backgroundContainer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    contain: strict;
+    /* Can't do this. It causes loss of scrolling on Firefox Android
+        https://emby.media/community/index.php?/topic/81799-firefox-android-cannot-swipe-scroll-on-any-listing-page
+    touch-action: none; */
+}
+
+.transparentDocument, .backgroundContainer-transparent {
+    background: none !important;
+    background-color: transparent !important;
+}
+
+.skinBody {
+    contain: style size;
+}
+
+.skinBody-withWindowScroll {
+    contain: style;
+}
+
+@media not all and (min-width: 60em) {
+
+    .drawer-docked {
+        display: none !important;
+        /* transform: translateX(-100%) !important;
+        content-visibility: hidden; */
+    }
+}
+
+.hide {
+    display: none !important;
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    contain: strict;
+}
+
+    .page.withTabs {
+        container-type: inline-size;
+        container-name: viewwithtabs;
+    }
+
+/* Until there's a better place for these */
+.itemsViewSettingsContainer {
+    -webkit-justify-content: center;
+    justify-content: center;
+    padding: 1em 0 1.75em !important;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-items: center;
+    align-items: center;
+    font-size: 88%;
+    /* this is a workaround to make it smaller so that pressing the right arrow on an items list doesn't result in navigation moving up to this bar */
+    max-width: 95%;
+    margin: 0 auto;
+    container-type: inline-size;
+    container-name: itemsviewsettingscontainer;
+}
+
+.itemsViewSettingsContainer-align-start {
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+@supports not (container-type: inline-size) {
+    @media not all and (min-width: 28em) {
+        .listTotalRecordCount {
+            display: none !important;
+        }
+    }
+}
+
+@container itemsviewsettingscontainer not (min-width: 50ch) {
+
+    .listTotalRecordCount {
+        display: none !important;
+    }
+}
+
+.itemsViewSettingsContainer-fixed {
+    position: fixed;
+    top: 6.25em;
+    top: calc(var(--header-height) + 1em);
+    left: 0;
+    right: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    z-index: 1;
+}
+
+.itemsContainer_header_fixed {
+    left: 0;
+    right: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    height: 3.18em;
+}
+
+/* dirty hack to detect support for column-gap in combination with flexbox, which is in Chrome 66+ and iOS 14.1+.
+   support for @supports with a selector became available around the same time
+*/
+@supports selector(:hover) and (display: revert) and (column-gap: 1em) {
+
+    .itemsViewSettingsContainer {
+        -webkit-column-gap: 1.1ch;
+        column-gap: 1.1ch;
+        row-gap: 1em;
+    }
+
+    .itemsViewSettingsContainer-button, .listTotalRecordCount {
+        margin: 0 !important;
+    }
+}
+
+@media all and (min-width: 60em) {
+
+    .drawer-docked {
+        left: 0 !important;
+        right: initial !important;
+        inset-inline-start: 0% !important;
+        inset-inline-end: initial !important;
+        -webkit-transform: none !important;
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    .page-withFullDrawer, .viewContent-fixed {
+        left: 33.15ch;
+        left: clamp(33.15ch, 30%, 45.5ch);
+        right: 0;
+        inset-inline-start: 33.15ch;
+        inset-inline-start: clamp(33.15ch, 30%, 45.5ch);
+        inset-inline-end: 0;
+    }
+
+    .skinHeader-withfulldrawer {
+        -webkit-margin-start: 33.15ch;
+        margin-inline-start: 33.15ch;
+        -webkit-margin-start: clamp(33.15ch, 30%, 45.5ch);
+        margin-inline-start: clamp(33.15ch, 30%, 45.5ch);
+    }
+
+    @media all and (pointer: fine) {
+
+        .page-withFullDrawer, .viewContent-fixed {
+            left: 16.5em;
+            left: calc(16.5em + env(safe-area-inset-left, 0));
+            right: 0;
+            inset-inline-start: 16.5em;
+            inset-inline-start: calc(16.5em + env(safe-area-inset-left, 0));
+            inset-inline-end: 0;
+        }
+
+        .rtl.withFullDrawer:root .page, .rtl.withFullDrawer:root .viewContent-fixed {
+            inset-inline-start: calc(16.5em + env(safe-area-inset-right, 0));
+        }
+
+        .skinHeader-withfulldrawer {
+            -webkit-margin-start: 16.5em;
+            margin-inline-start: 16.5em;
+            -webkit-margin-start: calc(16.5em + env(safe-area-inset-left, 0));
+            margin-inline-start: calc(16.5em + env(safe-area-inset-left, 0));
+        }
+
+        .rtl:root .skinHeader-withfulldrawer {
+            -webkit-margin-start: calc(16.5em + env(safe-area-inset-right, 0));
+            margin-inline-start: calc(16.5em + env(safe-area-inset-right, 0));
+        }
+    }
+
+    .withTabs .viewContent-fixed {
+        inset-inline-start: 0 !important;
+    }
+
+    .page-withMiniDrawer {
+        left: 10ch;
+        right: 0;
+        inset-inline-start: 10ch;
+        inset-inline-end: 0;
+    }
+
+    .skinHeader-withminidrawer {
+        -webkit-margin-start: 10ch;
+        margin-inline-start: 10ch;
+    }
+}
+
+.page-windowScroll {
+    /* Have to override because it breaks scrolling when dependant on window scroll */
+    contain: style size !important;
+    overflow: initial !important;
+    container-type: initial !important;
+    container-name: initial !important;
+}
+
+.page-windowScroll, .padded-top-page {
+    padding-top: 6em !important;
+    padding-top: var(--header-height) !important;
+}
+
+.margin-top-page-listheader {
+    padding-top: 0 !important;
+    margin-top: 14.3em !important;
+    margin-top: calc(var(--header-height) + 8.7em) !important;
+}
+
+/*
+    Forms
+    */
+form, .readOnlyContent {
+    max-width: 90ch;
+}
+
+.layout-tv form, .layout-tv .readOnlyContent {
+    max-width: 70vw;
+}
+
+.auto-center {
+    -webkit-margin-start: auto;
+    margin-inline-start: auto;
+    -webkit-margin-end: auto;
+    margin-inline-end: auto;
+}
+
+.page-withDockedDrawer .auto-center {
+    -webkit-margin-start: 0;
+    margin-inline-start: 0;
+    -webkit-margin-end: 0;
+    margin-inline-end: 0;
+}
+
+.page.dialog {
+    position: static;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+}
+
+.listTotalRecordCount {
+    margin: 0 .75em;
+}
+
+.fieldDescription {
+    margin-top: .2em;
+    font-weight: normal;
+    white-space: normal !important;
+}
+
+.legendDescription {
+    margin-top: 0;
+}
+
+@media all and (min-width: 50em) {
+    .listIconButton-autohide {
+        display: none !important;
+    }
+}
+
+@media not all and (min-width: 50em) {
+    .listTextButton-autohide {
+        display: none !important;
+    }
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+/* Need a better spot for this. used by directory picker and other areas */
+.infoBanner {
+    margin-bottom: 2em;
+    padding: 1em;
+    border-radius: .42em;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+
+.infoBanner-primaryText {
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Need a better spot for this. used by directory picker and other areas */
+.warningBanner {
+    padding: 1em;
+    border-radius: .42em;
+    font-weight: 500;
+}
+
+.infoBannerIconContainer {
+    -webkit-margin-end: 1em;
+    margin-inline-end: 1em;
+}
+
+.infoBannerIcon {
+    font-size: 2em;
+}
+
+.rtl .autortl, .rtl-arabic .autortl-arabic {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.focusPreviewContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.focusPreviewContainer-horizontal {
+    top: 85%;
+    height: 12%;
+}
+
+.focusPreviewContainer-inner {
+    height: 100%;
+}
+
+.focusPreviewImageElement {
+    -webkit-margin-end: 1em;
+    margin-inline-end: 1em;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 18vh;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+    border-radius: .42em;
+}
+
+.focusPreviewImageCard {
+    width: 100% !important;
+}
+
+.focusPreviewImageCardBox {
+    margin: 0 !important;
+}
+
+.focusPreviewImageContainer {
+    background-color: transparent !important;
+}
+
+.focusPreviewTitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.focusPreviewTitleImg {
+    height: 2em;
+    max-width: 97%;
+    margin: 0 !important;
+    border: 0 !important;
+    /* These are needed to prevent distorted logos in at least iOS safari */
+    object-fit: contain;
+    object-position: left center;
+    object-position: var(--logo-object-position);
+}
+
+.focusPreviewMediaInfo {
+    -webkit-flex-wrap: nowrap !important;
+    flex-wrap: nowrap !important;
+}
+
+.focusPreviewSecondaryTitle {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.focusPreviewOverview {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+
+.focusPreviewOverview-horizontal {
+    -webkit-line-clamp: 1;
+}
+
+.tab-scroller-withfocuspreview {
+    margin-top: 48vh;
+    /* undo strict or the focus preview container will be pushed down */
+    contain: size style !important;
+}
+
+.tab-scroller-withfocuspreview-padded-top-page {
+    padding-top: 0 !important;
+}
+
+.tab-scroller-withfocuspreview .sectionTitleContainer {
+    margin-top: 2.8em;
+}
+
+.tab-scroller-withfocuspreview .sectionTitleContainer-extrafocuspreviewmargin {
+    margin-top: 6em;
+}
+
+.backdropContainer-withfocuspreview {
+    left: initial;
+    right: 0;
+    inset-inline-start: initial;
+    inset-inline-end: 0;
+    -webkit-transform: scale(70%);
+    transform: scale(70%);
+    -webkit-transform-origin: top right;
+    transform-origin: top right;
+    opacity: .2;
+}
+
+/* need a way to exclude legacy edge and old tizen, lg because they're not handling the vh in the mask well */
+@supports (height: calc(3.125em + 2 * max(3em,4em))) {
+    .backdropContainer-withfocuspreview {
+        opacity: initial;
+    }
+
+        .backdropContainer-withfocuspreview.withBackdrop {
+            background-color: #000;
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 50%, black 100%), linear-gradient(to top, transparent 0%, black 50%, black 100%);
+            -webkit-mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-composite: source-in;
+        }
+
+    .backdropContainer-withfocuspreview-rtl.withBackdrop {
+        -webkit-mask-image: linear-gradient(to left, transparent 0%, black 50%, black 100%), linear-gradient(to top, transparent 0%, black 50%, black 100%);
+        -webkit-transform-origin: top left;
+        transform-origin: top left;
+    }
+}
+
+.backgroundContainer-withfocuspreview {
+    z-index: -2;
+}
+
+fieldset {
+    contain: style;
+    margin: 1em 0;
+    padding: 0;
+    border: 0;
+}
+
+legend {
+    padding: 0;
+}
+
+.emby-file-input {
+    color: transparent;
+}
+
+    .emby-file-input::file-selector-button {
+        display: none !important;
+    }
+
+.settingsDescriptionContainer {
+    width: 52%;
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.settingsDescriptionContent {
+    padding-top: 1em;
+}
+
+.settingsDescriptionContent-logo {
+    width: 20em;
+    height: 20em;
+    background-size: contain;
+    border-width: .7em;
+    border-style: solid;
+    border-radius: 100em;
+    padding: 1em;
+}
+
+.settingsContentContainer-tv {
+    max-width: initial;
+    -webkit-padding-end: 6%;
+    padding-inline-end: 6%;
+}

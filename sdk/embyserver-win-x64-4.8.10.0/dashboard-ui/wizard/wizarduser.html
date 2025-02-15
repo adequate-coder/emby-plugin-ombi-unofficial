@@ -1,0 +1,31 @@
+﻿<div is="emby-scroller" class="view flex flex-direction-column scrollFrameY flex-grow" data-mousewheel="true" data-horizontal="false" data-forcescrollbar="true" data-focusscroll="true" data-bindheader="true">
+    <div class="scrollSlider flex-grow flex-direction-column padded-left padded-left-page padded-right padded-top-page padded-bottom-page">
+
+        <form class="auto-center">
+
+            <fieldset>
+                <legend>${HeaderCreateYourFirstUser}</legend>
+                <p style="margin-top:0;">${UserProfilesIntro}</p>
+
+                <div class="inputContainer">
+                    <input is="emby-input" type="text" class="txtUsername" label="${LabelUsername}" required="required" autocomplete="off" />
+                    <div class="fieldDescription">${NewUserNameHelp}</div>
+                    <div class="fieldDescription">${MoreUsersCanBeAddedLater}</div>
+                </div>
+
+                <div class="inputContainer">
+                    <input is="emby-input" type="password" class="txtPassword" label="${LabelNewPassword}" required="required" autocomplete="off" />
+                </div>
+
+                <div class="inputContainer">
+                    <input is="emby-input" type="password" class="txtPasswordConfirm" label="${LabelNewPasswordConfirm}" required="required" autocomplete="off" />
+                </div>
+            </fieldset>
+
+            <div class="flex justify-content-flex-end">
+                <button is="emby-button" type="button" class="raised button-cancel" onclick="history.back();"><i class="md-icon button-icon button-icon-left autortl">&#xe5C4;</i><span>${Previous}</span></button>
+                <button is="emby-button" type="submit" class="raised button-submit"><span>${Next}</span><i class="md-icon button-icon button-icon-right autortl">&#xe5c8;</i></button>
+            </div>
+        </form>
+    </div>
+</div>

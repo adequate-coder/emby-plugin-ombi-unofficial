@@ -1,0 +1,15 @@
+{
+    "MediaType": "Medientyp",
+    "ExternalPlayers": "Externe Abspieler",
+    "ExternalPlayer": "Externer Abspieler",
+    "PlayerPath": "Abspieler-Pfad",
+    "ArgumentsHelp": "Jedes Argument muss in einer eigenen Zeile stehen.",
+    "TokenPath": "{path} = Pfad zur Mediendatei",
+    "EnableFor": "Aktivieren f\u00fcr",
+    "VideoFiles": "Videodateien",
+    "InternetStreams": "Internetstreams",
+    "CommandLineArguments": "Kommandozeilenbefehle",
+    "TokenStartPosMs": "{ms} = Startposition in ms",
+    "TokenStartPosSeconds": "{Seconds} = Startposition in Sekunden",
+    "AdditionalFilters": "Zus\u00e4tzliche Filter"
+}

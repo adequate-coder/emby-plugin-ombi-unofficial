@@ -1,0 +1,130 @@
+﻿<div is="emby-scroller" class="view flex flex-direction-column scrollFrameY flex-grow" data-mousewheel="true" data-horizontal="false" data-focusscroll="true" data-bindheader="true">
+    <div class="scrollSlider flex-grow flex-direction-column padded-left padded-left-page padded-right padded-top-page padded-bottom-page dashboardContainer">
+
+        <div class="dashboardSections">
+
+            <div class="dashboardSection dashboardSection-mini">
+                <div class="flex align-items-center">
+
+                    <h2 class="serverNameHeader"></h2>
+
+                    <button is="paper-icon-button-light" type="button" class="btnServerMoreMenu">
+                        <i class="md-icon">more_horiz</i>
+                    </button>
+
+                    <button is="paper-icon-button-light" type="button" class="btnRestartMenu">
+                        <i class="md-icon">power_settings_new</i>
+                    </button>
+
+                    <div class="supporterIconContainer flex align-items-center">
+                    </div>
+
+                </div>
+
+                <div class="infoBanner restartInfoBanner hide flex align-items-center" style="margin:0 0 1em;">
+
+                    <div class="infoBannerIconContainer">
+                        <i class="md-icon infoBannerIcon">notification_important</i>
+                    </div>
+                    <div class="infoBannerContent">
+                        ${MessagePleaseRestartServerToFinishUpdating}
+                    </div>
+                </div>
+                <div class="infoBanner" style="margin:0;">
+                    <div class="infoBannerContent">
+                        <p class="appVersionNumber" style="margin-top:0;">
+                        </p>
+                        <p class="pUpToDate hide flex align-items-center">
+                            <i class="md-icon serverUpToDateCheckIcon">&#xe5ca;</i>
+                            ${ServerUpToDate}
+                        </p>
+                        <div class="pUpdateNow hide">
+                            <p class="newVersionText" style="font-weight:bold;">
+                            </p>
+                            <button class="btnUpdateApplication raised block btnUpdateServer" is="emby-button" type="button">
+                                <span>${ButtonUpdateNow}</span>
+                            </button>
+                            <div class="btnManualUpdateContainer">
+
+                            </div>
+                        </div>
+                        <p class="ports"></p>
+
+                        <p class="localUrl"></p>
+                        <p class="externalUrl"></p>
+
+                        <a is="emby-linkbutton" class="raised raised-mini button-submit" style="margin:0;font-size:96%;" href="https://support.emby.media/support/solutions/articles/44001849007-connectivity" target="_blank">
+                            <i class="md-icon button-icon button-icon-left">wifi</i>
+                            <span>${HeaderConnectionHelp}</span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div style="margin:.5em 0 0;" class="flex betaInfo hide">
+                    <div class="betaInfoBanner">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="runningTasksContainer hide dashboardSection dashboardSection-mini">
+                <h2>${HeaderRunningTasks}</h2>
+                <div class="divRunningTasks" style="padding-top: .5em;padding-bottom: .5em;">
+                </div>
+            </div>
+
+            <div class="dashboardSection serverActivitySection activityContainer hide dashboardSection-mini">
+
+                <div class="sectionTitleContainer">
+                    <a href="serveractivity?useractivity=false" is="emby-sectiontitle" class="noautofocus button-link  button-link-color-inherit sectionTitleTextButton sectionTitleTextButton-link">
+                        <h2 class="sectionTitle">${Alerts}</h2>
+                    </a>
+                </div>
+
+                <div is="emby-itemscontainer" class="serverActivityItems itemsContainer flex-direction-column flex flex-grow" data-activitylimit="4" data-useractivity="false">
+                </div>
+            </div>
+
+            <div class="dashboardSection activeRecordingsSection hide">
+                <div class="sectionTitleContainer sectionTitleContainer-cards">
+                    <h2 class="sectionTitle sectionTitle-cards">${HeaderActiveRecordings}</h2>
+                </div>
+                <div class="activeRecordingItems vertical-wrap itemsContainer itemsContainer-defaultCardSize" is="emby-itemscontainer" data-monitor="RecordingStarted,RecordingEnded">
+                </div>
+            </div>
+
+            <div class="dashboardSection" style="flex-basis:100%;"></div>
+
+            <div class="dashboardSection">
+                <div class="sectionTitleContainer sectionTitleContainer-cards">
+                    <h2 class="sectionTitle sectionTitle-cards">${HeaderNowPlaying}</h2>
+                </div>
+
+                <div is="emby-itemscontainer" class="nowPlayingSessions itemsContainer vertical-wrap itemsContainer-defaultCardSize" data-domdiff="true">
+                </div>
+
+            </div>
+            <div class="dashboardSection">
+                <div class="sectionTitleContainer">
+                    <a href="serveractivity?useractivity=true" is="emby-sectiontitle" class="noautofocus button-link  button-link-color-inherit sectionTitleTextButton sectionTitleTextButton-link">
+                        <h2 class="sectionTitle">${HeaderActivity}</h2>
+                    </a>
+                </div>
+
+                <div is="emby-itemscontainer" class="userActivityItems itemsContainer flex-direction-column flex flex-grow" data-activitylimit="10" data-useractivity="true">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="dashboardFooter hide padded-top">
+
+            <a is="emby-linkbutton" class="button-link" href="https://emby.media" target="_blank">Emby</a>
+            <a is="emby-linkbutton" class="button-link" href="https://emby.media/community/index.php?/blog/1-emby-blog" target="_blank">${HeaderEmbyNews}</a>
+            <a is="emby-linkbutton" class="button-link" href="https://emby.media/community" target="_blank">${Community}</a>
+            <a is="emby-linkbutton" class="button-link" href="https://github.com/MediaBrowser" target="_blank">GitHub</a>
+            <a is="emby-linkbutton" class="button-link swaggerLink hide" target="_blank" href="#">API</a>
+        </div>
+    </div>
+</div>

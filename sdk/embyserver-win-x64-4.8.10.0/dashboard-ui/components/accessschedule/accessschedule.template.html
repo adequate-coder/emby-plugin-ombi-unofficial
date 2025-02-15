@@ -1,0 +1,36 @@
+﻿<div class="formDialogHeader">
+    <button type="button" is="emby-dialogclosebutton"></button>
+    <h3 class="formDialogHeaderTitle">
+        ${HeaderAccessSchedule}
+    </h3>
+</div>
+<div class="formDialogContent scrollY">
+    <div class="dialogContentInner dialog-content-centered padded-left padded-right">
+        <form class="scheduleForm" style="margin:auto;">
+
+            <div class="selectContainer">
+                <select is="emby-select" class="selectDay" label="${LabelDay}">
+                    <option value="Sunday">Sunday</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                </select>
+            </div>
+            <div class="selectContainer">
+                <select is="emby-select" class="selectHour selectStart" label="${LabelStartTime}"></select>
+            </div>
+            <div class="selectContainer">
+                <select is="emby-select" class="selectHour selectEnd" label="${LabelEndTime}"></select>
+            </div>
+
+            <div class="formDialogFooter">
+                <button is="emby-button" type="submit" class="raised button-submit block formDialogFooterItem">
+                    <span>${ButtonAdd}</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

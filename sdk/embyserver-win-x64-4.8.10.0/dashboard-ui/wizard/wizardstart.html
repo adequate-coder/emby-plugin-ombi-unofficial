@@ -1,0 +1,31 @@
+﻿<div is="emby-scroller" class="view flex flex-direction-column scrollFrameY flex-grow" data-mousewheel="true" data-horizontal="false" data-forcescrollbar="true" data-focusscroll="true" data-bindheader="true">
+    <div class="scrollSlider flex-grow flex-direction-column padded-left padded-left-page padded-right padded-top-page padded-bottom-page">
+
+        <form class="auto-center">
+
+            <fieldset>
+                <legend>${HeaderWelcomeToEmby}</legend>
+
+                <p style="margin-top:0;">${ThisWizardWillGuideYou}</p>
+
+                <p style="margin-bottom:2em;">
+                    <a is="emby-linkbutton" href="https://support.emby.media/support/solutions/articles/44001159034-quick-start" target="_blank" class="button-link flex-shrink-zero">
+                        <span>${ButtonQuickStartGuide}</span>
+                    </a>
+                </p>
+
+                <div class="selectContainer">
+                    <select is="emby-select" class="selectLocalizationLanguage" label="${LabelPreferredDisplayLanguage}"></select>
+                </div>
+
+            </fieldset>
+
+            <div class="flex justify-content-flex-end">
+                <button is="emby-button" type="submit" class="raised button-submit">
+                    <span>${Next}</span>
+                    <i class="md-icon button-icon button-icon-right autortl">&#xe5c8;</i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

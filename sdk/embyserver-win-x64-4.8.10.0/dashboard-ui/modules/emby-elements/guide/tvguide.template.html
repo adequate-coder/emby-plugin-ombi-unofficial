@@ -1,0 +1,59 @@
+﻿<div class="filterScroller flex flex-direction-row align-items-flex-start flex-shrink-zero hide focuscontainer-x" style="margin: .5em 0 1.5em;">
+
+    <div class="channelCell settingsChannelCell flex align-items-center justify-content-center" style="position:relative;">
+
+        <button is="paper-icon-button-light" type="button" class="guideIconButton btnGuideViewSettings secondaryText" data-focusscale="false">
+            <i class="md-icon">&#xe164;</i>
+        </button>
+    </div>
+
+    <div is="emby-scroller" data-scrollbuttons="false" data-forcescrollbar="true" data-mousewheel="false" data-horizontal="true" class="flex-shrink-zero flex align-self-center flex-shrink-one" style="font-size:90%;">
+        <div class="scrollSlider flex-shrink-zero flex align-self-center">
+
+            <button type="button" is="emby-button" class="raised raised-mini raised-outline guide-filter-button btnGuideCategory btnGuideCategory-all">${All}</button>
+
+            <div class="flex-shrink-zero flex align-self-center tagFilters">
+
+            </div>
+
+            <div class="flex-shrink-zero flex align-self-center hide">
+                <button type="button" is="emby-button" class="raised raised-mini raised-outline guide-filter-button btnGuideCategory" data-type="movies">${Movies}</button>
+                <button type="button" is="emby-button" class="raised raised-mini raised-outline guide-filter-button btnGuideCategory" data-type="sports">${Sports}</button>
+                <button type="button" is="emby-button" class="raised raised-mini raised-outline guide-filter-button btnGuideCategory" data-type="kids">${Kids}</button>
+                <button type="button" is="emby-button" class="raised raised-mini raised-outline guide-filter-button btnGuideCategory" data-type="news">${News}</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div is="emby-scroller" class="headerScroller flex-shrink-zero" data-mousewheel="false" data-horizontal="true" data-forcenativescroll="true" data-scrollbuttons="false" data-focusscroll="false">
+
+    <div class="scrollSlider focuscontainer-x guide-headerTimeslots secondaryText epgScrollSlider">
+
+        <div class="channelCell firstChannelCell">
+
+            <button is="emby-button" class="btnSelectDate btnSelectDate-text button-link secondaryText" data-focusscale="false">
+                <span class="btnDateText" style="white-space:nowrap;"></span>
+                <i class="md-icon button-icon">&#xe313;</i>
+            </button>
+
+            <button is="paper-icon-button-light" type="button" class="guideIconButton btnGuideViewSettings secondaryText hide" data-focusscale="false">
+                <i class="md-icon">&#xe164;</i>
+            </button>
+
+        </div>
+        <div class="timeslotHeaders flex flex-grow flex-direction-row"></div>
+    </div>
+
+</div>
+
+<div is="emby-scroller" class="flex-grow virtualScrollerScrollContainer focuscontainer-y navout-up padded-bottom-page" data-dualscroll="true" data-horizontal="false" data-forcenativescroll="true" data-scrollbuttons="true" data-scrollbuttonstype="x" data-scrollbuttonparent="self" data-adaptiveborderxstart="0" data-adaptiveborderystart="0" data-adaptiveborderxend="30" data-adaptiveborderyend="30">
+
+    <div is="emby-itemscontainer" data-virtualscrolllayout="vertical-grid" data-scrollresizeobserver="true" class="itemsContainer vertical-list epgItemsContainer scrollSlider epgScrollSlider focuscontainer-x" data-contextmenu="true" style="position:relative;">
+
+    </div>
+
+    <button is="emby-button" class="btnLiveGuide raised hide" aria-label="${Live}" tabindex="-1"><span class="btnLiveGuideText">${Live}</span></button>
+
+</div>

@@ -1,0 +1,35 @@
+﻿<div is="emby-scroller" data-horizontal="false" data-focusscroll="true" data-navcommands="card" data-forcescrollbar="true" class="scrollFrameY flex flex-grow" data-bindheader="true">
+    <div class="scrollSlider flex-grow padded-top-page padded-left padded-right">
+
+        <div class="encodingNotInitializedMessage hide padded-top readOnlyContent auto-center">
+            ${TranscodingStillInitializing}
+        </div>
+        <form class="tonemapOptionForm-legacy padded-top auto-center padded-bottom-page hide">
+
+            <div class="selectContainer fldToneMapping hide">
+                <select is="emby-select" class="selectToneMapping" label="${LabelEnableHDRToneMapping}">
+                    <option value="">${No}</option>
+                    <option value="hw">${WithHardwareAcceleratedTranscoding}</option>
+                    <option value="swforced">${WithSoftwareTranscoding}</option>
+                    <option value="both">${WithEitherHardwareOrSoftwareTranscoding}</option>
+                </select>
+                <div class="fieldDescription toneMappingDescription hide"></div>
+                <div class="fieldDescription">${EnableHDRToneMappingHelp}</div>
+                <div class="fieldDescription hwaPremiereInfo hide"></div>
+            </div>
+
+            <div>
+                <button is="emby-button" type="submit" class="raised button-submit block"><span>${Save}</span></button>
+            </div>
+        </form>
+        <form class="tonemapOptionForm padded-top auto-center padded-bottom-page hide">
+
+            <div class="editContainer">
+            </div>
+
+            <div>
+                <button is="emby-button" type="submit" class="raised button-submit block"><span>${Save}</span></button>
+            </div>
+        </form>
+    </div>
+</div>

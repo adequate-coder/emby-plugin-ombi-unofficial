@@ -1,0 +1,15 @@
+{
+    "MediaType": "Typ multimedi\u00f3w",
+    "ExternalPlayers": "Odtwarzacze zewn\u0119trzne",
+    "ExternalPlayer": "Odtwarzacz zewn\u0119trzny",
+    "PlayerPath": "Folder odtwarzacza",
+    "ArgumentsHelp": "Umie\u015b\u0107 ka\u017cdy z argument\u00f3w w oddzielnej linii",
+    "TokenPath": "{path} = folder pliku multimedialnego",
+    "EnableFor": "Aktywuj dla",
+    "VideoFiles": "Pliki wideo",
+    "InternetStreams": "Strumienie internetowe",
+    "CommandLineArguments": "Argumenty linii polece\u0144",
+    "TokenStartPosMs": "{ms} = pozycja startowa (ms)",
+    "TokenStartPosSeconds": "{Seconds} = pozycja startowa (sekundy)",
+    "AdditionalFilters": "Dodatkowe filtry"
+}
