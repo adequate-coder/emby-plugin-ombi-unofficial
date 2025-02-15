@@ -1,12 +1,11 @@
 using MediaBrowser.Common.Net;
 using MediaBrowser.Model.Serialization;
-using OmbiUnofficial.Configuration;
 
 namespace OmbiUnofficial;
 
 public sealed class OmbiClient(IHttpClient http, IJsonSerializer jsonSerializer)
 {
-    public async Task ScanRecentlyAdded(OmbiPluginConfiguration configuration)
+    public async Task ScanRecentlyAdded(OmbiPluginOptions configuration)
     {
         var options = new HttpRequestOptions
         {
@@ -20,7 +19,7 @@ public sealed class OmbiClient(IHttpClient http, IJsonSerializer jsonSerializer)
         await http.Post(options).ConfigureAwait(false);
     }
 
-    public async Task ScanLibrary(OmbiPluginConfiguration configuration)
+    public async Task ScanLibrary(OmbiPluginOptions configuration)
     {
         var options = new HttpRequestOptions
         {
@@ -34,14 +33,14 @@ public sealed class OmbiClient(IHttpClient http, IJsonSerializer jsonSerializer)
         await http.Post(options).ConfigureAwait(false);
     }
 
-    public async Task<string> GetOmbiVersion(OmbiPluginConfiguration configuration)
+    public async Task<string> GetOmbiVersion(OmbiPluginOptions options)
     {
-        var options = new HttpRequestOptions
+        var request = new HttpRequestOptions
         {
-            Url = configuration.GetUrl("api/v1/Status/info")
+            Url = options.GetUrl("api/v1/Status/info")
         };
 
-        using var responseStream = await http.Get(options).ConfigureAwait(false);
+        using var responseStream = await http.Get(request).ConfigureAwait(false);
         return await jsonSerializer.DeserializeFromStreamAsync<string>(responseStream);
     }
 }

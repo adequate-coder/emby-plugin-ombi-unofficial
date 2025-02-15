@@ -29,10 +29,10 @@ public sealed class OmbiItemSync(
     {
         var configuration = OmbiPlugin.Instance.Configuration;
         var errors = configuration.Validate();
-        if (errors.Length != 0)
+        if (errors.HasErrors)
         {
             logger.Info("An item was added to the library, but could not sync recently added to Ombi.");
-            logger.LogMultiline(errors, LogSeverity.Warn, new System.Text.StringBuilder());
+			logger.LogMultiline(errors.GetErrorMessage(), LogSeverity.Warn, new System.Text.StringBuilder());
         }
         else
         {

@@ -17,10 +17,10 @@ public sealed class OmbiLibrarySync(
     {
         var configuration = OmbiPlugin.Instance.Configuration;
         var errors = configuration.Validate();
-        if (errors.Length != 0)
+        if (errors.HasErrors)
         {
             logger.Error("Library scan completed, but could not sync content to Ombi.");
-            logger.LogMultiline(errors, LogSeverity.Warn, new System.Text.StringBuilder());
+            logger.LogMultiline(errors.GetErrorMessage(), LogSeverity.Warn, new System.Text.StringBuilder());
         }
         else
         {

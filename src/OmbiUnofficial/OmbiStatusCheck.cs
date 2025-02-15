@@ -40,7 +40,7 @@ public sealed class OmbiStatusCheck(
 
 	public async Task<object> Get(OmbiVersionQuery request)
     {
-        var configuration = new Configuration.OmbiPluginConfiguration
+        var configuration = new OmbiPluginOptions
         {
             Host = request.Host,
             Port = request.Port,
@@ -51,9 +51,9 @@ public sealed class OmbiStatusCheck(
         };
 
         var errors = configuration.Validate();
-        if (errors.Length != 0)
+        if (errors.HasErrors)
         {
-            throw new InvalidOperationException(errors);
+            throw new InvalidOperationException(errors.GetErrorMessage());
         }
 
         var client = new OmbiClient(http, jsonSerializer);

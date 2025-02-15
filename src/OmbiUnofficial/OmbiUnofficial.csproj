@@ -13,11 +13,6 @@
         <PackageReference Include="System.Memory" Version="4.6.0" />
     </ItemGroup>
 
-    <ItemGroup>
-        <None Remove="Configuration\Ombi.html" />
-        <EmbeddedResource Include="Configuration\Ombi.html" />
-    </ItemGroup>
-
     <Target Name="PostBuild" AfterTargets="Build">
         <Exec Command="copy $(TargetPath) $(MSBuildProjectDirectory)\..\..\sdk\programdata\plugins\" />
     </Target>
