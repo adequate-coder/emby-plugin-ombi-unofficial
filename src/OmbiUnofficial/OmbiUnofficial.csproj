@@ -1,21 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <LangVersion>12</LangVersion>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>12</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyVersion>1.0.0</AssemblyVersion>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="mediabrowser.server.core" Version="4.8.10" />
-    <PackageReference Include="System.Memory" Version="4.6.0" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="mediabrowser.server.core" Version="4.8.10" />
+        <PackageReference Include="System.Memory" Version="4.6.0" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <None Remove="Configuration\Ombi.html" />
-    <EmbeddedResource Include="Configuration\Ombi.html" />
-  </ItemGroup>
+    <ItemGroup>
+        <None Remove="Configuration\Ombi.html" />
+        <EmbeddedResource Include="Configuration\Ombi.html" />
+    </ItemGroup>
 
+    <Target Name="PostBuild" AfterTargets="Build">
+        <Exec Command="copy $(TargetPath) $(MSBuildProjectDirectory)\..\..\sdk\programdata\plugins\" />
+    </Target>
 </Project>

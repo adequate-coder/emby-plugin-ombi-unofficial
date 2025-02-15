@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "EmbyServer.exe": {
+      "commandName": "Executable",
+      "executablePath": "..\\..\\sdk\\embyserver-win-x64-4.8.10.0\\EmbyServer.exe",
+      "commandLineArgs": "-nointerface",
+      "workingDirectory": "..\\..\\sdk\\embyserver-win-x64-4.8.10.0\\"
+    }
+  }
+}
