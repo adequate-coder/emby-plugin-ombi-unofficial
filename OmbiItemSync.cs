@@ -6,37 +6,23 @@ using MediaBrowser.Model.Serialization;
 
 namespace OmbiUnofficial;
 
-public sealed class OmbiItemSync : IServerEntryPoint
+public sealed class OmbiItemSync(
+    ILogManager logManager,
+    ILibraryManager libraryManager,
+    IHttpClient http,
+    IJsonSerializer jsonSerializer
+) : IServerEntryPoint
 {
-    private readonly ILogger logger;
-
-    private readonly ILibraryManager libraryManager;
-
-    private readonly IHttpClient http;
-
-    private readonly IJsonSerializer jsonSerializer;
-
-    public OmbiItemSync(
-        ILogManager logManager,
-        ILibraryManager libraryManager,
-        IHttpClient http,
-        IJsonSerializer jsonSerializer
-    )
-    {
-        this.logger = logManager.GetLogger(OmbiPlugin.Instance.Name);
-        this.libraryManager = libraryManager ?? throw new ArgumentNullException(nameof(http));
-        this.http = http ?? throw new ArgumentNullException(nameof(http));
-        this.jsonSerializer = jsonSerializer ?? throw new ArgumentNullException(nameof(jsonSerializer));
-    }
+    private readonly ILogger logger = logManager.GetLogger(OmbiPlugin.Instance.Name);
 
     public void Run()
     {
-        this.libraryManager.ItemAdded += SyncRecentlyAdded;
+        libraryManager.ItemAdded += SyncRecentlyAdded;
     }
 
     public void Dispose()
     {
-        this.libraryManager.ItemAdded -= SyncRecentlyAdded;
+        libraryManager.ItemAdded -= SyncRecentlyAdded;
     }
 
     private async void SyncRecentlyAdded(object sender, ItemChangeEventArgs args)

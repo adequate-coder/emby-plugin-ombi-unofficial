@@ -4,6 +4,7 @@ using MediaBrowser.Model.Serialization;
 using OmbiUnofficial.Configuration;
 
 namespace OmbiUnofficial;
+
 public class OmbiPlugin : BasePlugin<OmbiPluginConfiguration>
 {
     public OmbiPlugin(IApplicationPaths applicationPaths, IXmlSerializer xmlSerializer)

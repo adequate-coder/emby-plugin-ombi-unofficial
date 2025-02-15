@@ -4,18 +4,8 @@ using OmbiUnofficial.Configuration;
 
 namespace OmbiUnofficial;
 
-public sealed class OmbiClient
+public sealed class OmbiClient(IHttpClient http, IJsonSerializer jsonSerializer)
 {
-    private IHttpClient http;
-
-    private IJsonSerializer jsonSerializer;
-
-    public OmbiClient(IHttpClient http, IJsonSerializer jsonSerializer)
-    {
-        this.http = http;
-        this.jsonSerializer = jsonSerializer;
-    }
-
     public async Task ScanRecentlyAdded(OmbiPluginConfiguration configuration)
     {
         var options = new HttpRequestOptions

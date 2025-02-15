@@ -5,24 +5,13 @@ using MediaBrowser.Model.Serialization;
 
 namespace OmbiUnofficial;
 
-public sealed class OmbiLibrarySync : ILibraryPostScanTask
+public sealed class OmbiLibrarySync(
+    ILogManager logManager,
+    IHttpClient http,
+    IJsonSerializer jsonSerializer
+) : ILibraryPostScanTask
 {
-    private readonly ILogger logger;
-
-    private readonly IHttpClient http;
-
-    private readonly IJsonSerializer jsonSerializer;
-
-    public OmbiLibrarySync(
-        ILogManager logManager,
-        IHttpClient http,
-        IJsonSerializer jsonSerializer
-    )
-    {
-        this.logger = logManager.GetLogger(OmbiPlugin.Instance.Name);
-        this.http = http ?? throw new ArgumentNullException(nameof(http));
-        this.jsonSerializer = jsonSerializer ?? throw new ArgumentNullException(nameof(jsonSerializer));
-    }
+    private readonly ILogger logger = logManager.GetLogger(OmbiPlugin.Instance.Name);
 
     public async Task Run(IProgress<double> progress, CancellationToken cancellationToken)
     {
