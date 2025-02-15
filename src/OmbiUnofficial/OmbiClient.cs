@@ -5,32 +5,32 @@ namespace OmbiUnofficial;
 
 public sealed class OmbiClient(IHttpClient http, IJsonSerializer jsonSerializer)
 {
-    public async Task ScanRecentlyAdded(OmbiPluginOptions configuration)
+    public async Task ScanRecentlyAdded(OmbiPluginOptions options)
     {
-        var options = new HttpRequestOptions
+        var request = new HttpRequestOptions
         {
-            Url = configuration.GetUrl("api/v1/Job/embyrecentlyadded")
+            Url = options.GetUrl("api/v1/Job/embyrecentlyadded")
         };
-        options.RequestHeaders["ApiKey"] = configuration.ApiKey;
-        if (!string.IsNullOrWhiteSpace(configuration.User))
+        request.RequestHeaders["ApiKey"] = options.ApiKey;
+        if (!string.IsNullOrWhiteSpace(options.User))
         {
-            options.RequestHeaders["UserName"] = configuration.User;
+            request.RequestHeaders["UserName"] = options.User;
         }
-        await http.Post(options).ConfigureAwait(false);
+        await http.Post(request).ConfigureAwait(false);
     }
 
-    public async Task ScanLibrary(OmbiPluginOptions configuration)
+    public async Task ScanLibrary(OmbiPluginOptions options)
     {
-        var options = new HttpRequestOptions
+        var request = new HttpRequestOptions
         {
-            Url = configuration.GetUrl("api/v1/Job/embycontentcacher")
+            Url = options.GetUrl("api/v1/Job/embycontentcacher")
         };
-        options.RequestHeaders["ApiKey"] = configuration.ApiKey;
-        if (!string.IsNullOrWhiteSpace(configuration.User))
+        request.RequestHeaders["ApiKey"] = options.ApiKey;
+        if (!string.IsNullOrWhiteSpace(options.User))
         {
-            options.RequestHeaders["UserName"] = configuration.User;
+            request.RequestHeaders["UserName"] = options.User;
         }
-        await http.Post(options).ConfigureAwait(false);
+        await http.Post(request).ConfigureAwait(false);
     }
 
     public async Task<string> GetOmbiVersion(OmbiPluginOptions options)
@@ -42,5 +42,21 @@ public sealed class OmbiClient(IHttpClient http, IJsonSerializer jsonSerializer)
 
         using var responseStream = await http.Get(request).ConfigureAwait(false);
         return await jsonSerializer.DeserializeFromStreamAsync<string>(responseStream);
+    }
+    
+    public async Task<AboutPage> AboutOmbi(OmbiPluginOptions options)
+    {
+        var request = new HttpRequestOptions
+        {
+            Url = options.GetUrl("api/v1/Settings/about")
+        };
+		request.RequestHeaders["ApiKey"] = options.ApiKey;
+		if (!string.IsNullOrWhiteSpace(options.User))
+		{
+			request.RequestHeaders["UserName"] = options.User;
+		}
+
+		using var responseStream = await http.Get(request).ConfigureAwait(false);
+        return await jsonSerializer.DeserializeFromStreamAsync<AboutPage>(responseStream);
     }
 }

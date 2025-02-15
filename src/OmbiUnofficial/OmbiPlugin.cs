@@ -45,27 +45,14 @@ public class OmbiPlugin : BasePluginSimpleUI<OmbiPluginOptions>
 
 	protected override bool OnOptionsSaving(OmbiPluginOptions options)
 	{
+		var client = new OmbiClient(httpClient, jsonSerializer);
+
+		string? version;
 		try
 		{
-			var client = new OmbiClient(httpClient, jsonSerializer);
 			var versionTask = client.GetOmbiVersion(options);
 			Task.WaitAll(versionTask);
-			
-			if (!Version.TryParse(versionTask.Result, out _))
-			{
-				throw new InvalidOperationException(
-					$"Ombi version could not be determined, check if this is correct: '{options.GetUrl("api/v1/Status/info")}'.");
-			}
-			else
-			{
-				if (options.NotifyOnError)
-				{
-					NotifyAdmins(
-						"Emby plugin for Ombi notifications are enabled",
-						"You will now receive Ombi error notifications from this Emby plugin."
-					);
-				}
-			}
+			version = versionTask.Result;
 
 		}
 		catch (Exception reason)
@@ -78,6 +65,47 @@ public class OmbiPlugin : BasePluginSimpleUI<OmbiPluginOptions>
 			throw new InvalidOperationException(msg, reason);
 		}
 
+
+		if (!Version.TryParse(version, out _))
+		{
+			var msg = $"""
+				Ombi version could not be determined.
+				Check if this is correct: '{options.GetUrl("api/v1/Status/info")}'.
+				""";
+			throw new InvalidOperationException(msg);
+		}
+
+		AboutPage about;
+		try
+		{
+			var aboutTask = client.AboutOmbi(options);
+			Task.WaitAll(aboutTask);
+			about = aboutTask.Result;
+		}
+		catch (Exception reason)
+		{
+			var msg = $"""
+				Ombi API key could not be validated.
+				{reason.Message}
+				""";
+			throw new InvalidOperationException(msg, reason);
+		}
+
+		if (about is null)
+		{
+			var msg = $"""
+				Ombi API key could not be validated
+				""";
+			throw new InvalidOperationException(msg);
+		}
+
+		if (options.NotifyOnError)
+		{
+			NotifyAdmins(
+				"Emby plugin for Ombi notifications are enabled",
+				"You will now receive Ombi error notifications from this Emby plugin."
+			);
+		}
 		return true;
 	}
 
@@ -98,10 +126,5 @@ public class OmbiPlugin : BasePluginSimpleUI<OmbiPluginOptions>
 				Description = description
 			});
 		}
-	}
-
-	protected override void OnOptionsSaved(OmbiPluginOptions options)
-	{
-		base.OnOptionsSaved(options);
 	}
 }
