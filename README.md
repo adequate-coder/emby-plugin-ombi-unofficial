@@ -10,7 +10,7 @@ Features
 
 ## Installing
 
-The plugin is **not** available in the Emby plugins catalog, I shall not be bothered to add it.
+The plugin is **not** available in the Emby plugins catalog, but manual installation is easy.
 
 Grab the plugin DLL from [the releases](https://github.com/adequate-coder/emby-plugin-ombi-unofficial/releases) page.
 
@@ -23,18 +23,20 @@ Restart your Emby server
 
 ## Configuring
 
-In your Emby server settings, find the Plugins tab (under the Advanced tab group).  
-Click the "Ombi" tile.  
-Fill in your Ombi server settings, click "Validate" to test the connection and click "Save" to persist your configuration.
+In your Emby server settings, find the Plugins tab (under the Advanced tab group) and click the "Ombi" tile.
+
+![Plugin page](static/plugins-page.png)
+
+Fill in your Ombi server settings and API key, click "Save".
 
 ![Configuration page](static/configuration-page.png)
 
+Your settings and API key are validated when you click "Save". If the validation fails, the error message will be displayed, and your settings will not be saved.
+
+Otherwise, you're all set!
+
+
 ## Known issues
-
-The Validate button does not validate the API key.
-
-Sometimes your values are not saved when you click "Save".  
-Workaround: do a page refresh. If it still doesn't work, clear your browser cache.
 
 Sometimes the Ombi sync takes too long.  
 Workaround: enable "fast sync" in the plugin settings. Be sure to follow the instructions right below it, or your library changes won't sync at all.
