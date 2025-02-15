@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35716.79 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmbiUnofficial", "OmbiUnofficial.csproj", "{0473FE92-1419-CBF0-A215-C56A2A51C992}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0473FE92-1419-CBF0-A215-C56A2A51C992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0473FE92-1419-CBF0-A215-C56A2A51C992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0473FE92-1419-CBF0-A215-C56A2A51C992}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0473FE92-1419-CBF0-A215-C56A2A51C992}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1CAE1DA8-9AA5-42CA-A9A7-29773B3F6791}
+	EndGlobalSection
+EndGlobal
